@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wood Sort - Trò Chơi Xếp Gỗ</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f5e6;
+            color: #5d4037;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .header-container {
+            background-color: #8d6e63;
+            color: white;
+        }
+        .logo-img {
+            max-height: 80px;
+        }
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/api/placeholder/1200/500');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .feature-box {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 25px;
+            margin-bottom: 30px;
+            height: 100%;
+            transition: transform 0.3s ease;
+            border-left: 5px solid #8d6e63;
+        }
+        .feature-box:hover {
+            transform: translateY(-10px);
+        }
+        .feature-icon {
+            font-size: 2.5rem;
+            color: #8d6e63;
+            margin-bottom: 15px;
+        }
+        .game-screenshot {
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        .game-screenshot:hover {
+            transform: scale(1.05);
+        }
+        .testimonial-section {
+            background-color: #5d4037;
+            color: white;
+            padding: 60px 0;
+        }
+        .testimonial-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 15px;
+            height: 100%;
+        }
+        .rating {
+            color: #FFD700;
+            font-size: 1.5rem;
+            margin: 10px 0;
+        }
+        .download-section {
+            background: linear-gradient(135deg, #8d6e63 0%, #a1887f 100%);
+            color: white;
+            padding: 60px 0;
+        }
+        .store-badge {
+            max-width: 180px;
+            margin: 10px;
+            transition: transform 0.3s ease;
+        }
+        .store-badge:hover {
+            transform: scale(1.1);
+        }
+        .footer {
+            background-color: #5d4037;
+            color: #e0e0e0;
+            padding: 20px 0;
+        }
+        .social-icon {
+            font-size: 1.5rem;
+            margin: 0 10px;
+            color: white;
+            transition: transform 0.3s ease;
+        }
+        .social-icon:hover {
+            transform: scale(1.2);
+        }
+        .stats-counter {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #8d6e63;
+        }
+        .nav-link {
+            color: white;
+            margin: 0 10px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #ddd;
+        }
+        .btn-wood {
+            background-color: #8d6e63;
+            border-color: #8d6e63;
+            color: white;
+            border-radius: 25px;
+            padding: 10px 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .btn-wood:hover {
+            background-color: #6d4c41;
+            border-color: #6d4c41;
+            transform: scale(1.05);
+            color: white;
+        }
+        .btn-outline-wood {
+            border-color: white;
+            color: white;
+            border-radius: 25px;
+            padding: 10px 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .btn-outline-wood:hover {
+            background-color: white;
+            color: #8d6e63;
+            transform: scale(1.05);
+        }
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header-container py-3 sticky-top">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4 mb-2 mb-md-0">
+                    <div class="d-flex align-items-center">
+                        <img src="img/logo_150_tran.png"  alt="Wood Sort Logo" class="logo-img me-3">
+                        <h1 class="m-0">Wood Sort</h1>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <nav class="d-flex justify-content-md-end justify-content-center">
+                        <a href="#features" class="nav-link">Tính Năng</a>
+                        <a href="#gameplay" class="nav-link">Lối Chơi</a>
+                        <a href="#testimonials" class="nav-link">Đánh Giá</a>
+                        <a href="#download" class="nav-link">Tải Game</a>
+                        <a href="policy.html" class="nav-link">Chính Sách</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <h1 class="display-3 fw-bold mb-4">Wood Sort</h1>
+                    <h2 class="h3 mb-4">Trò chơi xếp gỗ giải trí, thư giãn và thử thách trí tuệ</h2>
+                    <p class="lead mb-4">Sắp xếp các thanh gỗ theo màu sắc, thể hiện khả năng suy nghĩ logic và chiến lược của bạn trong trò chơi hấp dẫn này!</p>
+                    <div class="d-flex flex-wrap">
+                        <a href="#download" class="btn btn-wood me-3 mb-3 mb-md-0">Tải Ngay</a>
+                        <a href="#gameplay" class="btn btn-outline-wood">Xem Lối Chơi</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="img/gameplay.png" width="250" alt="Wood Sort Game" class="img-fluid game-screenshot floating">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <p class="stats-counter mb-0">5M+</p>
+                    <p class="h5">Lượt Tải</p>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <p class="stats-counter mb-0">4.8</p>
+                    <p class="h5">Đánh Giá Trung Bình</p>
+                </div>
+                <div class="col-md-4">
+                    <p class="stats-counter mb-0">500+</p>
+                    <p class="h5">Cấp Độ</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-5" id="features">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Tính Năng Nổi Bật</h2>
+                <p class="lead">Khám phá những điều làm cho Wood Sort trở nên đặc biệt</p>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>Thử Thách Trí Tuệ</h3>
+                        <p>Hàng trăm cấp độ thách thức với độ khó tăng dần, giúp bạn rèn luyện tư duy logic và khả năng giải quyết vấn đề.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3>Đồ Họa Tự Nhiên</h3>
+                        <p>Giao diện đẹp mắt với chủ đề gỗ tự nhiên, hiệu ứng hình ảnh chân thực và âm thanh thư giãn từ thiên nhiên.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3>Dễ Chơi, Khó Thành Thạo</h3>
+                        <p>Luật chơi đơn giản nhưng đòi hỏi sự tính toán và chiến lược, phù hợp cho mọi lứa tuổi.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h3>Thành Tích & Giải Thưởng</h3>
+                        <p>Hệ thống thành tích đa dạng, huy hiệu và phần thưởng trong game khuyến khích người chơi tiếp tục chinh phục.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-infinity"></i>
+                        </div>
+                        <h3>Chế Độ Vô Hạn</h3>
+                        <p>Chơi không giới hạn với chế độ vô tận, nơi bạn có thể thư giãn và trải nghiệm không gian sáng tạo riêng.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-wifi"></i>
+                        </div>
+                        <h3>Chơi Ngoại Tuyến</h3>
+                        <p>Không cần kết nối internet, bạn có thể chơi mọi lúc mọi nơi, ngay cả khi không có mạng.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Play Section -->
+    <section class="py-5 bg-light" id="gameplay">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Cách Chơi</h2>
+                <p class="lead">Đơn giản nhưng đầy thử thách</p>
+            </div>
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6 mb-4 mb-lg-0 order-lg-2">
+                    <img src="/api/placeholder/500/300" alt="Gameplay Screenshot 1" class="img-fluid game-screenshot">
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <h3 class="mb-3">1. Sắp Xếp Theo Màu</h3>
+                    <p>Mục tiêu của trò chơi là sắp xếp tất cả các thanh gỗ cùng màu vào một ống. Di chuyển các thanh gỗ giữa các ống khác nhau để đạt được mục tiêu này.</p>
+                    <p>Mỗi ống chỉ có thể chứa một số lượng thanh gỗ nhất định. Bạn chỉ có thể di chuyển thanh gỗ ở vị trí trên cùng của mỗi ống.</p>
+                </div>
+            </div>
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="/api/placeholder/500/300" alt="Gameplay Screenshot 2" class="img-fluid game-screenshot">
+                </div>
+                <div class="col-lg-6">
+                    <h3 class="mb-3">2. Lập Kế Hoạch Chiến Lược</h3>
+                    <p>Suy nghĩ trước các bước di chuyển để tránh bị kẹt. Các ống trống có thể được sử dụng như không gian tạm thời để di chuyển các thanh gỗ.</p>
+                    <p>Đôi khi bạn cần di chuyển một số thanh gỗ tạm thời sang một ống khác để giải phóng không gian cho việc sắp xếp.</p>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0 order-lg-2">
+                    <img src="/api/placeholder/500/300" alt="Gameplay Screenshot 3" class="img-fluid game-screenshot">
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <h3 class="mb-3">3. Giải Quyết Các Câu Đố</h3>
+                    <p>Mỗi cấp độ là một câu đố độc đáo với sự sắp xếp thanh gỗ khác nhau. Khi độ khó tăng lên, bạn sẽ cần nhiều bước di chuyển hơn và chiến lược phức tạp hơn.</p>
+                    <p>Hoàn thành tất cả các cấp độ để mở khóa thành tích và phần thưởng đặc biệt!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimonial-section" id="testimonials">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Người Chơi Nói Gì?</h2>
+                <p class="lead">Đánh giá từ cộng đồng người chơi Wood Sort</p>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="testimonial-card">
+                        <h4>Minh Anh</h4>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Trò chơi tuyệt vời để thư giãn sau ngày làm việc mệt mỏi. Đồ họa đẹp mắt và âm thanh nhẹ nhàng giúp tôi cảm thấy bình yên khi chơi."</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="testimonial-card">
+                        <h4>Thanh Tùng</h4>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p>"Tôi đã thử nhiều trò chơi giải đố, nhưng Wood Sort là trò mà tôi luôn quay lại. Cấp độ được thiết kế rất thông minh và đầy thách thức."</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="testimonial-card">
+                        <h4>Hương Giang</h4>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Con trai tôi 8 tuổi và tôi đều yêu thích trò chơi này. Đây là cách tuyệt vời để rèn luyện tư duy cho con và cũng là thời gian giải trí cho cả gia đình."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Hình Ảnh Trò Chơi</h2>
+                <p class="lead">Trải nghiệm Wood Sort qua hình ảnh</p>
+            </div>
+            <div class="row">
+                <div class="col-6 col-md-4 col-lg-3 mb-4">
+                    <img src="/api/placeholder/300/600" alt="Screenshot 1" class="img-fluid game-screenshot">
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 mb-4">
+                    <img src="/api/placeholder/300/600" alt="Screenshot 2" class="img-fluid game-screenshot">
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 mb-4">
+                    <img src="/api/placeholder/300/600" alt="Screenshot 3" class="img-fluid game-screenshot">
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 mb-4">
+                    <img src="/api/placeholder/300/600" alt="Screenshot 4" class="img-fluid game-screenshot">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section class="download-section" id="download">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Tải Game Ngay</h2>
+                <p class="lead">Sẵn sàng cho Wood Sort? Tải miễn phí ngay bây giờ!</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-8 text-center">
+                    <p class="mb-4">Chơi Wood Sort trên mọi thiết bị của bạn. Miễn phí tải về với các tính năng mua trong ứng dụng tùy chọn.</p>
+                    <div class="d-flex flex-wrap justify-content-center">
+                        <a href="#" class="mb-3 me-3">
+                            <img src="/api/placeholder/180/60" alt="App Store" class="store-badge">
+                        </a>
+                        <a href="#" class="mb-3 me-3">
+                            <img src="/api/placeholder/180/60" alt="Google Play" class="store-badge">
+                        </a>
+                        <a href="#" class="mb-3">
+                            <img src="/api/placeholder/180/60" alt="App Gallery" class="store-badge">
+                        </a>
+                    </div>
+                    <div class="mt-4">
+                        <p>Hơn 5 triệu lượt tải và đang tiếp tục tăng!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Câu Hỏi Thường Gặp</h2>
+                <p class="lead">Giải đáp thắc mắc của bạn về Wood Sort</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item mb-3 border rounded-3">
+                            <h3 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Wood Sort có miễn phí không?
+                                </button>
+                            </h3>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p>Có, Wood Sort hoàn toàn miễn phí để tải về và chơi. Trò chơi có các tùy chọn mua trong ứng dụng cho các vật phẩm bổ sung, nhưng bạn có thể tận hưởng trò chơi mà không cần mua bất kỳ thứ gì.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-3 border rounded-3">
+                            <h3 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Có bao nhiêu cấp độ trong trò chơi?
+                                </button>
+                            </h3>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p>Hiện tại, Wood Sort có hơn 500 cấp độ với độ khó tăng dần. Chúng tôi thường xuyên cập nhật thêm các cấp độ mới qua các bản cập nhật để giữ cho trò chơi luôn mới mẻ và thú vị.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-3 border rounded-3">
+                            <h3 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Tôi có thể chơi khi không có kết nối internet không?
+                                </button>
+                            </h3>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p>Có, Wood Sort là trò chơi ngoại tuyến. Sau khi tải về, bạn có thể chơi mọi lúc, mọi nơi mà không cần kết nối internet. Chỉ một số tính năng như bảng xếp hạng toàn cầu và đồng bộ hóa tiến trình qua các thiết bị mới yêu cầu kết nối mạng.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-3 border rounded-3">
+                            <h3 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    Làm thế nào để hủy bỏ một bước đi sai?
+                                </button>
+                            </h3>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p>Bạn có thể nhấn vào nút "Hoàn tác" ở góc màn hình để hủy bỏ bước đi gần nhất. Ở chế độ cơ bản, bạn có 5 lần hoàn tác miễn phí và có thể kiếm thêm thông qua xem quảng cáo hoặc mua trong ứng dụng.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-3 border rounded-3">
+                            <h3 class="accordion-header" id="headingFive">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                    Làm thế nào để báo cáo sự cố hoặc đề xuất tính năng mới?
+                                </button>
+                            </h3>
+                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p>Chúng tôi luôn mong muốn nhận phản hồi từ người chơi. Bạn có thể gửi báo cáo sự cố hoặc đề xuất qua mục "Phản hồi" trong Cài đặt của trò chơi, hoặc liên hệ trực tiếp qua email support@woodsort.com.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="mb-4">Đăng Ký Nhận Tin</h2>
+                    <p class="mb-4">Nhận thông tin về các cập nhật mới, tính năng sắp ra mắt và mẹo chơi game hữu ích!</p>
+                    <div class="row justify-content-center">
+                        <div class="col-md-8">
+                            <form class="d-flex">
+                                <input type="email" class="form-control me-2" placeholder="Nhập email của bạn">
+                                <button class="btn btn-wood">Đăng Ký</button>
+                            </form>
+                        </div>
