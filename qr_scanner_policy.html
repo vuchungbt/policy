@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Multiple QR Scanner</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            background: linear-gradient(45deg, #4CAF50, #45a049);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255,255,255,0.1) 10px,
+                rgba(255,255,255,0.1) 20px
+            );
+            animation: slide 20s linear infinite;
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateX(-50px);
+            }
+            100% {
+                transform: translateX(50px);
+            }
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header .app-name {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .qr-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 20px;
+            background: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .qr-pattern {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(45deg, #4CAF50, #45a049);
+            position: relative;
+        }
+
+        .qr-pattern::before,
+        .qr-pattern::after {
+            content: '';
+            position: absolute;
+            background: white;
+        }
+
+        .qr-pattern::before {
+            width: 12px;
+            height: 12px;
+            top: 6px;
+            left: 6px;
+        }
+
+        .qr-pattern::after {
+            width: 12px;
+            height: 12px;
+            bottom: 6px;
+            right: 6px;
+        }
+
+        .content {
+            padding: 40px 30px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 15px;
+            border-left: 4px solid #4CAF50;
+            transition: all 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .section h2 {
+            color: #4CAF50;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-icon {
+            width: 24px;
+            height: 24px;
+            background: #4CAF50;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .section p {
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .feature-item {
+            background: rgba(76, 175, 80, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: scale(1.05);
+        }
+
+        .feature-item strong {
+            color: #4CAF50;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .contact-info {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .contact-info a {
+            color: #84fab0;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .last-updated {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(0,0,0,0.05);
+            border-radius: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                border-radius: 15px;
+            }
+            
+            .header {
+                padding: 30px 20px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="qr-icon">
+                <div class="qr-pattern"></div>
+            </div>
+            <h1>Privacy Policy</h1>
+            <div class="app-name">Multiple QR Scanner</div>
+        </div>
+
+        <div class="content">
+            <div class="section">
+                <h2>
+                    <div class="section-icon">1</div>
+                    Introduction
+                </h2>
+                <p>Welcome to <span class="highlight">Multiple QR Scanner</span>! We are committed to protecting your privacy and ensuring a secure experience while using our QR code scanning and generating application. This Privacy Policy explains how we collect, use, and safeguard your information.</p>
+                <p>By using Multiple QR Scanner, you agree to the collection and use of information in accordance with this policy.</p>
+            </div>
+
+            <div class="section">
+                <h2>
+                    <div class="section-icon">2</div>
+                    Information We Collect
+                </h2>
+                <p><strong>Camera Access:</strong> Our app requires camera permission to scan QR codes and barcodes. We do not store or transmit any images captured by your camera.</p>
+                <p><strong>QR Code Data:</strong> When you scan QR codes, the decoded information is processed locally on your device. We do not collect or store this data on our servers.</p>
+                <p><strong>Generated QR Codes:</strong> QR codes you create using our app are generated locally on your device and are not uploaded to our servers unless you explicitly choose to share them.</p>
+                <p><strong>Usage Analytics:</strong> We may collect anonymous usage statistics to improve app performance and user experience, but this data cannot be used to identify you personally.</p>
+            </div>
+
+            <div class="section">
+                <h2>
+                    <div class="section-icon">3</div>
+                    App Features & Capabilities
+                </h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <strong>QR Code Scanning</strong>
+                        <p>Instant scanning of various QR code types</p>
+                    </div>
+                    <div class="feature-item">
+                        <strong>Barcode Support</strong>
+                        <p>Multiple barcode format recognition</p>
+                    </div>
+                    <div class="feature-item">
+                        <strong>QR Generation</strong>
+                        <p>Create custom QR codes with multiple options</p>
+                    </div>
+                    <div class="feature-item">
+                        <strong>History Tracking</strong>
+                        <p>Local scan history management</p>
+                    </div>
+                    <div class="feature-item">
+                        <strong>Batch Processing</strong>
+                        <p>Scan multiple codes efficiently</p>
+                    </div>
+                    <div class="feature-item">
+                        <strong>Export Options</strong>
+                        <p>Save and share generated QR codes</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>
+                    <div class="section-icon">4</div>
+                    How We Use Your Information
+                </h2>
+                <p>The limited information we collect is used solely to:</p>
+                <p>• <strong>Provide core functionality:</strong> Enable QR code scanning and generation features</p>
+                <p>• <strong>Improve user experience:</strong> Optimize app performance and add new features</p>
+                <p>• <strong>Ensure security:</strong> Protect against misuse and maintain app integrity</p>
+                <p>• <strong>Provide support:</strong> Help resolve technical issues when contacted</p>
+            </div>
+
+            <div class="section">
+                <h2>
+                    <div class="section-icon">5</div>
+                    Data Storage & Security
+                </h2>
+                <p><span class="highlight">Local Processing:</span> All QR code scanning and generation is performed locally on your device. Your scanned data never leaves your device unless you explicitly choose to share it.</p>
+                <p><strong>No Cloud Storage:</strong> We do not store your QR code data, scan history, or personal information on remote servers.</p>
+                <p><strong>Security Measures:</strong> We implement appropriate technical and organizational measures to protect your information against unauthorized access, alteration, disclosure, or destruction.</p>
+            </div>
+
+            <div class="section">
+                <h2>
+                    <div class="section-icon">6</div>
+                    Third-Party Services
+                </h2>
+                <p>Multiple QR Scanner may integrate with third-party services for enhanced functionality:</p>
+                <p>• <strong>Analytics Services:</strong> For anonymous usage statistics (Google Analytics, Firebase)</p>
+                <p>• <strong>Ad Networks:</strong> If applicable, for displaying relevant advertisements</p>
+                <p>• <strong>Social Sharing:</strong> When you choose to share QR codes via social media platforms</p>
+                <p>These third-party services have their own privacy policies, and we encourage you to review them.</p>
+            </div>
+
+            <div class="section">
+                <h2>
+                    <div class="section-icon">7</div>
+                    Permissions & Access
+                </h2>
+                <p><strong>Camera:</strong> Required for scanning QR codes and barcodes</p>
+                <p><strong>Photo Library:</strong> Optional, for saving generated QR codes</p>
+                <p><strong>Internet:</strong> For app updates and optional cloud features</p>
+                <p><strong>Notifications:</strong> For scan results and app updates (optional)</p>
+                <p>You can manage these permissions through your device settings at any time.</p>
+            </div>
+
+            <div class="section">
+                <h2>
+                    <div class="section-icon">8</div>
+                    Your Rights & Choices
+                </h2>
+                <p>You have the right to:</p>
+                <p>• <strong>Access:</strong> Request information about data we may have collected</p>
+                <p>• <strong>Correction:</strong> Update or correct any inaccurate information</p>
+                <p>• <strong>Deletion:</strong> Request deletion of your data (though most data is stored locally)</p>
+                <p>• <strong>Portability:</strong> Export your locally stored scan history</p>
+                <p>• <strong>Opt-out:</strong> Disable analytics and optional data collection features</p>
+            </div>
+
+            <div class="section">
+                <h2>
+                    <div class="section-icon">9</div>
+                    Children's Privacy
+                </h2>
+                <p>Multiple QR Scanner is suitable for users of all ages. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us immediately.</p>
+            </div>
+
+            <div class="section">
+                <h2>
+                    <div class="section-icon">10</div>
+                    Changes to This Policy
+                </h2>
+                <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy in the app and updating the "Last Updated" date. You are advised to review this Privacy Policy periodically for any changes.</p>
+                <p>Continued use of the app after changes constitutes acceptance of the updated policy.</p>
+            </div>
+
+            <div class="contact-info">
+                <h2 style="color: white; margin-bottom: 15px;">Contact Us</h2>
+                <p>If you have any questions about this Privacy Policy or our practices, please contact us:</p>
+                <p><strong>Email:</strong> <a href="mailto:nguyenvandienaz7@gmail.com">nguyenvandienaz7@gmail.com</a></p>
+                <p><strong>Support:</strong> <a href="mailto:nguyenvandienaz7@gmail.com">nguyenvandienaz7@gmail.com</a></p>
+            </div>
+
+            <div class="last-updated">
+                <p><strong>Last Updated:</strong> June 23, 2025</p>
+                <p>Version 1.0</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
