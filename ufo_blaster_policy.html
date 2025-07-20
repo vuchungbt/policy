@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UFO Blaster - Game Policy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0c0c2e 0%, #1a1a4a 50%, #2d2d5f 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="star" cx="50%" cy="50%"><stop offset="0%" stop-color="white" stop-opacity="1"/><stop offset="100%" stop-color="white" stop-opacity="0"/></radialGradient></defs><circle cx="10" cy="20" r="0.5" fill="url(%23star)"/><circle cx="80" cy="10" r="0.3" fill="url(%23star)"/><circle cx="30" cy="70" r="0.4" fill="url(%23star)"/><circle cx="90" cy="50" r="0.2" fill="url(%23star)"/><circle cx="50" cy="90" r="0.3" fill="url(%23star)"/><circle cx="70" cy="30" r="0.2" fill="url(%23star)"/></svg>') repeat;
+            animation: twinkle 4s infinite ease-in-out;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 40px 0;
+            background: linear-gradient(45deg, rgba(255, 215, 0, 0.1), rgba(0, 255, 255, 0.1));
+            border-radius: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .game-title {
+            font-size: 3em;
+            font-weight: bold;
+            background: linear-gradient(45deg, #ffd700, #00ffff, #ff6b6b);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 3s ease-in-out infinite;
+            margin-bottom: 10px;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: #b8b8ff;
+            margin-bottom: 20px;
+        }
+
+        .policy-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .nav-button {
+            padding: 12px 24px;
+            background: linear-gradient(45deg, rgba(255, 215, 0, 0.2), rgba(0, 255, 255, 0.2));
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 25px;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 255, 255, 0.3);
+            background: linear-gradient(45deg, rgba(255, 215, 0, 0.4), rgba(0, 255, 255, 0.4));
+        }
+
+        .policy-section {
+            background: rgba(255, 255, 255, 0.05);
+            margin: 30px 0;
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            color: #ffd700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2em;
+        }
+
+        .policy-content {
+            line-height: 1.8;
+            color: #e0e0e0;
+        }
+
+        .policy-content h3 {
+            color: #00ffff;
+            margin: 20px 0 10px 0;
+            font-size: 1.2em;
+        }
+
+        .policy-content ul {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+
+        .policy-content li {
+            margin: 8px 0;
+        }
+
+        .highlight {
+            background: linear-gradient(45deg, rgba(255, 215, 0, 0.2), rgba(255, 107, 107, 0.2));
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #ffd700;
+            margin: 15px 0;
+        }
+
+        .contact-info {
+            background: linear-gradient(45deg, rgba(0, 255, 255, 0.1), rgba(255, 107, 107, 0.1));
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 30px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: #888;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .game-title {
+                font-size: 2em;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+            
+            .policy-section {
+                padding: 20px;
+            }
+            
+            .nav-button {
+                padding: 10px 20px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="game-title">🚀 UFO BLASTER 🛸</h1>
+            <p class="subtitle">Game Policy & Terms of Service</p>
+            <div class="policy-nav">
+                <a href="#privacy" class="nav-button">🔒 Privacy Policy</a>
+                <a href="#terms" class="nav-button">📋 Terms of Use</a>
+                <a href="#gameplay" class="nav-button">🎮 Game Rules</a>
+                <a href="#contact" class="nav-button">📞 Contact</a>
+            </div>
+        </div>
+
+        <section id="privacy" class="policy-section">
+            <h2 class="section-title">
+                <div class="section-icon">🔒</div>
+                Privacy Policy
+            </h2>
+            <div class="policy-content">
+                <div class="highlight">
+                    <strong>Committed to protecting player personal information</strong>
+                </div>
+                
+                <h3>Information We Collect</h3>
+                <ul>
+                    <li>High scores and game achievements</li>
+                    <li>Play time and usage frequency</li>
+                    <li>Device and basic technical information</li>
+                    <li>We do not collect sensitive personal information</li>
+                </ul>
+
+                <h3>How We Use Information</h3>
+                <ul>
+                    <li>Improve gaming experience</li>
+                    <li>Save game progress and scores</li>
+                    <li>Optimize game performance</li>
+                    <li>Provide technical support</li>
+                </ul>
+
+                <h3>Data Security</h3>
+                <p>We use advanced security measures to protect your data. Information is encrypted and stored securely on protected servers. We never share your personal data with third parties without your explicit consent.</p>
+                
+                <h3>Data Retention</h3>
+                <p>Game data is retained for as long as you play the game. You can request data deletion by contacting our support team.</p>
+            </div>
+        </section>
+
+        <section id="terms" class="policy-section">
+            <h2 class="section-title">
+                <div class="section-icon">📋</div>
+                Terms of Service
+            </h2>
+            <div class="policy-content">
+                <h3>Rights and Responsibilities</h3>
+                <ul>
+                    <li>Game is free for entertainment purposes</li>
+                    <li>No use of hacking tools, cheats, or exploits</li>
+                    <li>Respect other players and fair play</li>
+                    <li>Report bugs and violations to support</li>
+                </ul>
+
+                <h3>Game Content</h3>
+                <ul>
+                    <li>Suitable for all ages (family-friendly)</li>
+                    <li>No inappropriate or offensive content</li>
+                    <li>Space-themed arcade shooting gameplay</li>
+                    <li>Single-player experience focused</li>
+                </ul>
+
+                <h3>Prohibited Activities</h3>
+                <ul>
+                    <li>Using unauthorized third-party software</li>
+                    <li>Attempting to reverse engineer the game</li>
+                    <li>Creating or distributing game hacks</li>
+                    <li>Any form of harassment or abuse</li>
+                </ul>
+
+                <h3>Intellectual Property</h3>
+                <p>All game content, including graphics, sounds, and code, are protected by copyright. Players may not redistribute or modify game files.</p>
+            </div>
+        </section>
+
+        <section id="gameplay" class="policy-section">
+            <h2 class="section-title">
+                <div class="section-icon">🎮</div>
+                Game Rules & Guidelines
+            </h2>
+            <div class="policy-content">
+                <h3>How to Play</h3>
+                <ul>
+                    <li>Control your spaceship to avoid and destroy enemy UFOs</li>
+                    <li>Collect coins and power-ups for higher scores</li>
+                    <li>Survive as long as possible to beat your high score</li>
+                    <li>Game gets progressively more challenging</li>
+                </ul>
+
+                <h3>Scoring System</h3>
+                <ul>
+                    <li>Destroy UFOs to earn points</li>
+                    <li>Collect coins for bonus points</li>
+                    <li>Survival time contributes to final score</li>
+                    <li>High scores are saved locally on your device</li>
+                </ul>
+
+                <h3>Fair Play Policy</h3>
+                <p>We encourage fair and honest gameplay. Any attempt to manipulate scores or use unauthorized tools may result in score resets or game access restrictions.</p>
+                
+                <div class="highlight">
+                    <strong>Remember:</strong> UFO Blaster is designed to be fun and challenging. Play responsibly and take breaks when needed!
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="policy-section">
+            <h2 class="section-title">
+                <div class="section-icon">📞</div>
+                Contact & Support
+            </h2>
+            <div class="policy-content">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p>Have questions, feedback, or need support? We'd love to hear from you!</p>
+                    <br>
+                    <p><strong>📧 Email:</strong> dev.tecksolke@gmail.com</p> 
+                    <p><strong>⏰ Response Time:</strong> Within 24-48 hours</p>
+                    <br>
+                    <p>For bug reports, please include your device type and a description of the issue.</p>
+                </div>
+                
+                <h3>Customer Support</h3>
+                <ul>
+                    <li>Technical issues and troubleshooting</li>
+                    <li>Game feedback and suggestions</li>
+                    <li>Privacy and data concerns</li>
+                    <li>Account and progress inquiries</li>
+                </ul>
+
+                <h3>Updates & News</h3>
+                <p>Stay updated with the latest game updates, new features, and announcements through our official channels.</p>
+            </div>
+        </section>
+
+        <div class="footer">
+            <p>&copy; 2025 UFO Blaster Game. All rights reserved.</p>
+            <p>Last updated: July 18, 2025</p>
+            <p>Version 1.0.2 | Made with ❤️ for space enthusiasts</p>
+        </div>
