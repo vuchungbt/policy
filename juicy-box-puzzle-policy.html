@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juicy Box Puzzle - Privacy Policy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #81C784 0%, #4CAF50 50%, #388E3C 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #FF6B35, #F7931E);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .game-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        .fruit-emoji {
+            font-size: 3rem;
+            margin: 0 10px;
+            display: inline-block;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        .fruit-emoji:nth-child(2) { animation-delay: 0.2s; }
+        .fruit-emoji:nth-child(3) { animation-delay: 0.4s; }
+        .fruit-emoji:nth-child(4) { animation-delay: 0.6s; }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        h1 {
+            color: #2E7D32;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, #FF6B35, #F7931E);
+            border-radius: 2px;
+        }
+
+        h2 {
+            color: #388E3C;
+            font-size: 1.3rem;
+            margin: 30px 0 15px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        h2::before {
+            content: '🍊';
+            position: absolute;
+            left: -5px;
+            top: 0;
+            font-size: 1.2rem;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+            padding: 0 10px;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, rgba(255, 107, 53, 0.1) 0%, rgba(247, 147, 30, 0.1) 100%);
+            padding: 20px;
+            border-radius: 15px;
+            border-left: 5px solid #FF6B35;
+            margin: 20px 0;
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, #E8F5E8, #C8E6C9);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: center;
+            border: 2px solid #81C784;
+        }
+
+        .last-updated {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            margin-top: 30px;
+            padding: 20px;
+            background: #F5F5F5;
+            border-radius: 10px;
+        }
+
+        .section {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: rgba(232, 245, 232, 0.3);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        ul {
+            margin: 15px 0;
+            padding-left: 30px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .footer {
+            background: #2E7D32;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                margin: 10px;
+                border-radius: 15px;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .game-title {
+                font-size: 2rem;
+            }
+            
+            .fruit-emoji {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="game-title">
+                <span class="fruit-emoji">🍓</span>
+                <span class="fruit-emoji">🍊</span>
+                <span class="fruit-emoji">🥝</span>
+                <span class="fruit-emoji">🍇</span>
+            </div>
+            <h1 style="color: white; margin: 0;">Juicy Box Puzzle</h1>
+            <p style="margin: 10px 0 0 0; opacity: 0.9;">Delicious Fruit Matching Adventure</p>
+        </div>
+
+        <div class="content">
+            <h1>Privacy Policy</h1>
+
+            <div class="highlight">
+                <p><strong>Your privacy is important to us.</strong> This Privacy Policy explains how we collect, use, and protect your information when you play Juicy Box Puzzle.</p>
+            </div>
+
+            <div class="section">
+                <h2>Information We Collect</h2>
+                <p>When you play Juicy Box Puzzle, we may collect the following types of information:</p>
+                <ul>
+                    <li><strong>Game Progress Data:</strong> Your level progress, scores, and achievements</li>
+                    <li><strong>Device Information:</strong> Device type, operating system, and app version</li>
+                    <li><strong>Usage Analytics:</strong> How you interact with the game to improve gameplay experience</li>
+                    <li><strong>Crash Reports:</strong> Technical data to help us fix bugs and improve stability</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>How We Use Your Information</h2>
+                <p>We use the collected information to:</p>
+                <ul>
+                    <li>Save your game progress and settings</li>
+                    <li>Provide personalized gaming experience</li>
+                    <li>Improve game performance and fix technical issues</li>
+                    <li>Analyze game usage to enhance gameplay features</li>
+                    <li>Send you important game updates and notifications (with your consent)</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Data Storage and Security</h2>
+                <p>Your game data is stored securely on your device and our servers. We implement appropriate security measures to protect your information against unauthorized access, alteration, disclosure, or destruction. Your personal data is encrypted and stored in compliance with industry standards.</p>
+            </div>
+
+            <div class="section">
+                <h2>Third-Party Services</h2>
+                <p>Juicy Box Puzzle may integrate with third-party services for:</p>
+                <ul>
+                    <li><strong>Analytics:</strong> To understand player behavior and improve the game</li>
+                    <li><strong>Advertising:</strong> To show relevant ads (if applicable)</li>
+                    <li><strong>Social Features:</strong> To enable sharing achievements with friends</li>
+                </ul>
+                <p>These third parties have their own privacy policies, and we encourage you to review them.</p>
+            </div>
+
+            <div class="section">
+                <h2>Children's Privacy</h2>
+                <p>Juicy Box Puzzle is designed to be family-friendly and suitable for all ages. We do not knowingly collect personal information from children under 13 years of age. If you are a parent or guardian and believe your child has provided us with personal information, please contact us immediately.</p>
+            </div>
+
+            <div class="section">
+                <h2>Your Rights and Choices</h2>
+                <p>You have the right to:</p>
+                <ul>
+                    <li>Access your personal data stored in the game</li>
+                    <li>Request deletion of your account and associated data</li>
+                    <li>Opt-out of data collection for analytics purposes</li>
+                    <li>Turn off personalized advertisements in your device settings</li>
+                    <li>Contact us with any privacy-related questions or concerns</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Data Retention</h2>
+                <p>We retain your game data for as long as your account remains active or as needed to provide you services. If you request account deletion, we will remove your personal data within 30 days, except where we are required to retain it by law.</p>
+            </div>
+
+            <div class="section">
+                <h2>Changes to This Policy</h2>
+                <p>We may update this Privacy Policy from time to time to reflect changes in our practices or applicable laws. We will notify you of any significant changes through the game or by other means. Your continued use of Juicy Box Puzzle after such modifications constitutes your acceptance of the updated policy.</p>
+            </div>
+
+            <div class="contact-info">
+                <h2 style="margin-top: 0; text-align: center;">Contact Us</h2>
+                <p style="text-align: center;">If you have any questions about this Privacy Policy or our data practices, please contact us:</p>
+                <p style="text-align: center;"><strong>Email:</strong> anhntn162@gmail.com</p>
+            </div>
+
+            <div class="last-updated">
+                <p><strong>Last Updated:</strong> August 7, 2025</p>
+                <p>Version 1.0.0</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2025 Juicy Box Puzzle. All rights reserved.</p>
+            <p>🍓 Thank you for playing our delicious puzzle game! 🍊</p>
+        </div>
+    </div>
+</body>
+</html>
