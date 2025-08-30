@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRAN HUU HUNG - Unity 2D Game Developer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 48px;
+            color: white;
+            font-weight: bold;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #555;
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 2em;
+            border-bottom: 3px solid #ff6b6b;
+            padding-bottom: 10px;
+        }
+
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .game-card {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+            color: #333;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .game-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .game-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 107, 107, 0.2);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 32px;
+        }
+
+        .game-card h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .game-status {
+            background: #4ecdc4;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8em;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .skill-tag {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            padding: 10px 16px;
+            border-radius: 25px;
+            font-size: 0.9em;
+            transition: transform 0.2s ease;
+            font-weight: 500;
+        }
+
+        .skill-tag:hover {
+            transform: scale(1.05);
+        }
+
+        .experience-item {
+            background: linear-gradient(135deg, #a8e6cf 0%, #dcedc1 100%);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 15px;
+            border-left: 5px solid #4ecdc4;
+        }
+
+        .experience-item h4 {
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .experience-period {
+            color: #7f8c8d;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        .footer {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 40px;
+            padding: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .header, .section {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="profile-img">HH</div>
+            <h1>TRAN HUU HUNG</h1>
+            <p class="subtitle">Unity 2D Game Developer & Indie Game Creator</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📧</span>
+                    <span>trangoc721@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <span>📱</span>
+                    <span>+84382350173</span>
+                </div>
+                <div class="contact-item">
+                    <span>🌐</span>
+                    <span>www.me.piestudio.io.vn</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Me -->
+        <div class="section">
+            <h2>About Me</h2>
+            <p>I'm a passionate Unity 2D game developer with over 4 years of experience creating engaging mobile games. I specialize in crafting immersive 2D experiences with stunning visuals, smooth gameplay mechanics, and compelling storytelling. My games have been downloaded by thousands of players worldwide across Android and iOS platforms.</p>
+            
+            <div class="skills">
+                <span class="skill-tag">Unity 2D</span>
+                <span class="skill-tag">C# Programming</span>
+                <span class="skill-tag">Game Design</span>
+                <span class="skill-tag">2D Animation</span>
+                <span class="skill-tag">Sprite Art</span>
+                <span class="skill-tag">Mobile Optimization</span>
+                <span class="skill-tag">UI/UX Design</span>
+                <span class="skill-tag">Audio Integration</span>
+                <span class="skill-tag">Google Play Console</span>
+                <span class="skill-tag">App Store Connect</span>
+            </div>
+        </div>
+
+        <!-- My Games -->
+        <div class="section">
+            <h2>My Games Portfolio</h2>
+            <div class="game-grid">
+                <div class="game-card">
+                    <div class="game-icon">✈️</div>
+                    <h3>1945 Air Force: Airplane Games</h3>
+                    <p> Take control of legendary warplanes and experience the thrill of airplane shooting games in 1945 Air Force! This classic arcade game brings intense air force battles, fast-paced shooting games, and action-packed flying games straight to your mobile device. Join the ultimate air force games challenge, relive the spirit of 1945, and become a true wing fighter ace!</p>
+                    <div class="game-status">Published on Google Play</div>
+                </div>
+                
+                <div class="game-card">
+                    <div class="game-icon">🧩</div>
+                    <h3>Mind Puzzle Quest</h3>
+                    <p>A brain-teasing puzzle game with over 100 levels. Features innovative mechanics, progressive difficulty, and achievement system with Google Play Games integration.</p>
+                    <div class="game-status">In Development</div>
+                </div>
+                
+                <div class="game-card">
+                    <div class="game-icon">⚔️</div>
+                    <h3>Shadow Knight Chronicles</h3>
+                    <p>A 2D action-adventure game with RPG elements. Features combat system, character progression, inventory management, and an epic storyline.</p>
+                    <div class="game-status">Coming Soon</div>
+                </div>
+                
+                <div class="game-card">
+                    <div class="game-icon">🍰</div>
+                    <h3>Cake Match Mania</h3>
+                    <p>A colorful match-3 puzzle game with sweet themes. Includes special boosters, daily challenges, and social features for competing with friends.</p>
+                    <div class="game-status">Planning Stage</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Experience -->
+        <div class="section">
+            <h2>Experience & Expertise</h2>
+            
+            <div class="experience-item">
+                <h4>Senior Unity 2D Developer - Indie Game Studio</h4>
+                <div class="experience-period">2024 - Present</div>
+                <p>Led development of multiple 2D mobile games using Unity. Implemented gameplay mechanics, optimized performance for mobile devices, and integrated monetization systems including ads and in-app purchases.</p>
+            </div>
+			            
+            <div class="experience-item">
+                <h4>Freelance Game Developer</h4>
+                <div class="experience-period">2021 - 2024</div>
+                <p>Created custom 2D games for various clients. Specialized in educational games, casual puzzles, and prototype development for game studios.</p>
+            </div>
+            
+            <div class="experience-item">
+                <h4>Game Developer - Mobile Gaming Company</h4>
+                <div class="experience-period">2018 - 2021</div>
+                <p>Developed casual mobile games with Unity 2D. Worked on UI/UX design, implemented analytics, and collaborated with artists and designers to create engaging player experiences.</p>
+            </div>
+
+        </div>
+
+        <!-- Technical Skills -->
+        <div class="section">
+            <h2>Technical Expertise</h2>
+            <p><strong>Game Development:</strong></p>
+            <ul style="margin: 15px 0 15px 20px;">
+                <li>Unity 2D Engine (6+ years experience)</li>
+                <li>C# Programming & Object-Oriented Design</li>
+                <li>Game Physics & Collision Detection</li>
+                <li>2D Animation with Unity Animator</li>
+                <li>Sprite Management & Atlasing</li>
+                <li>Audio Implementation & Sound Design</li>
+            </ul>
+            
+            <p><strong>Mobile Development:</strong></p>
+            <ul style="margin: 15px 0 15px 20px;">
+                <li>Android & iOS Game Optimization</li>
+                <li>Touch Input & Gesture Recognition</li>
+                <li>Memory Management & Performance Tuning</li>
+                <li>Google Play Games Services Integration</li>
+                <li>In-App Purchases & Monetization</li>
+                <li>Analytics Implementation (Google Analytics, Firebase)</li>
+            </ul>
+        </div>
+
+        <!-- Privacy Policy -->
+        <div class="section">
+            <h2>Privacy Policy</h2>
+            <p><strong>Our Commitment to Privacy:</strong></p>
+            <ul style="margin: 15px 0 15px 20px;">
+                <li>We collect minimal user data necessary for game functionality</li>
+                <li>All user data is encrypted and stored securely</li>
+                <li>We do not sell or share personal information with third parties</li>
+                <li>Users can request data deletion at any time</li>
+                <li>We comply with GDPR and COPPA regulations</li>
+                <li>Anonymous analytics are used solely for improving game experience</li>
+            </ul>
+            
+            <p><strong>Data Collection:</strong> Our games may collect anonymous gameplay statistics, crash reports, and device performance data to improve user experience.</p>
+            
+            <p><strong>Contact for Privacy Concerns:</strong> privacy@email.com</p>
+            
+            <p style="margin-top: 20px;"><em>Last Updated: July 2025</em></p>
+        </div>
+
+        <!-- Contact -->
+        <div class="section">
+            <h2>Let's Create Amazing Games Together</h2>
+            <p>Have a game idea or looking for a Unity 2D developer? I'm always excited to work on new projects and bring creative visions to life!</p>
+            <div style="margin-top: 20px;">
+                <p><strong>Email:</strong> trangoc721@gmail.com</p>
+                <p><strong>Phone:</strong> +84382350173</p> 
+                <p><strong>GitHub:</strong> github.com/hunghtr02</p>
+                <p><strong>Portfolio:</strong> www.me.piestudio.io.vn</p> 
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2025 TRẦN HỮU HÙNG Game Development VietNam. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
