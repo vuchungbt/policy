@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAO PHAN - Unity Game Developer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #1a202c;
+            background: linear-gradient(135deg, #f0fff4 0%, #e6fffa 50%, #f0f9ff 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #065f46 0%, #047857 100%);
+            color: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            text-align: center;
+            margin-bottom: 40px;
+            box-shadow: 0 25px 50px rgba(6, 95, 70, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="1.5" fill="rgba(255,255,255,0.1)"/></svg>');
+            pointer-events: none;
+        }
+
+        .profile-section {
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #10b981, #34d399);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 40px;
+            color: white;
+            font-weight: bold;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .subtitle {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-item {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .section {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(6, 95, 70, 0.1);
+            border: 2px solid rgba(16, 185, 129, 0.1);
+        }
+
+        .section h2 {
+            color: #065f46;
+            margin-bottom: 25px;
+            font-size: 2.2em;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #10b981, #34d399);
+            border-radius: 2px;
+        }
+
+        .about-text {
+            font-size: 1.1em;
+            color: #374151;
+            margin-bottom: 25px;
+            text-align: justify;
+        }
+
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .game-card {
+            background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid #d1fae5;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .game-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .game-card:hover::before {
+            left: 100%;
+        }
+
+        .game-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(6, 95, 70, 0.15);
+            border-color: #10b981;
+        }
+
+        .game-icon {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(45deg, #10b981, #34d399);
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 36px;
+            color: white;
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+        }
+
+        .game-card h3 {
+            color: #065f46;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+            font-weight: 600;
+        }
+
+        .game-card p {
+            color: #374151;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .game-status {
+            background: linear-gradient(45deg, #10b981, #059669);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            display: inline-block;
+            font-weight: 500;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        .skill-tag {
+            background: linear-gradient(45deg, #047857, #10b981);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 30px;
+            font-size: 0.9em;
+            transition: all 0.2s ease;
+            font-weight: 500;
+            box-shadow: 0 4px 15px rgba(4, 120, 87, 0.3);
+        }
+
+        .skill-tag:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(4, 120, 87, 0.4);
+        }
+
+        .experience-item {
+            background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+            padding: 25px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            border-left: 6px solid #10b981;
+            transition: all 0.3s ease;
+        }
+
+        .experience-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.1);
+        }
+
+        .experience-item h4 {
+            color: #065f46;
+            margin-bottom: 8px;
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+
+        .experience-period {
+            color: #10b981;
+            font-size: 0.95em;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .experience-item p {
+            color: #374151;
+            line-height: 1.6;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #065f46, #047857);
+            color: white;
+            padding: 25px;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        .footer {
+            text-align: center;
+            color: #065f46;
+            margin-top: 50px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .header, .section {
+                padding: 25px;
+            }
+            
+            h1 {
+                font-size: 2.2em;
+            }
+            
+            .contact-info {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .game-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="profile-section"> 
+                <h1>DAO PHAN</h1>
+                <p class="subtitle">Unity Game Developer & Creative Innovator</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span>📧</span>
+                        <span>blendmax444@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>📱</span>
+                        <span>+84 376868055</span>
+                    </div> 
+                </div>
+            </div>
+        </div>
+
+        <!-- About Me -->
+        <div class="section">
+            <h2>About Me</h2>
+            <p class="about-text">I'm a dedicated Unity 2D game developer with 2 years of hands-on experience in creating captivating mobile games. My passion lies in transforming creative concepts into polished, engaging gaming experiences that delight players worldwide. I focus on developing intuitive gameplay mechanics, beautiful visual designs, and seamless user experiences optimized for mobile platforms.</p>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">2+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">2+</div>
+                    <div class="stat-label">Games Developed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">10K+</div>
+                    <div class="stat-label">Downloads</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">4.5★</div>
+                    <div class="stat-label">Average Rating</div>
+                </div>
+            </div>
+            
+            <div class="skills">
+                <span class="skill-tag">Unity 2D Engine</span>
+                <span class="skill-tag">C# Programming</span>
+                <span class="skill-tag">Game Design</span>
+                <span class="skill-tag">2D Animation</span>
+                <span class="skill-tag">Sprite Creation</span>
+                <span class="skill-tag">Mobile Optimization</span>
+                <span class="skill-tag">UI/UX Design</span>
+                <span class="skill-tag">Physics Systems</span>
+                <span class="skill-tag">Audio Integration</span>
+                <span class="skill-tag">Google Play Services</span>
+            </div>
+        </div>
+
+        <!-- My Games -->
+        <div class="section">
+            <h2>Featured Games</h2>
+            <div class="game-grid">
+                <div class="game-card">
+                    <div class="game-icon">💀</div>
+                    <h3>Zombie Shooter Puzzle</h3>
+					<div class="game-status">In Development</div>
+                </div>
+                
+                <div class="game-card">
+                    <div class="game-icon">🚀</div>
+                    <h3>Block Gem Blast</h3>
+                    <div class="game-status">In Development</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Experience -->
+        <div class="section">
+            <h2>Professional Experience</h2>
+            
+            <div class="experience-item">
+                <h4>Unity 2D Game Developer - Independent Studio</h4>
+                <div class="experience-period">2024 - Present</div>
+                <p>Developing and publishing mobile games using Unity 2D engine. Responsible for complete game development lifecycle from concept to publication. Implemented advanced gameplay mechanics, optimized performance for various mobile devices, and integrated monetization strategies.</p>
+            </div>
+            
+            <div class="experience-item">
+                <h4>Fresher Game Developer</h4>
+                <div class="experience-period">2022 - 2024</div>
+                <p>Collaborated with small development teams and independent clients to create custom 2D games. Specialized in rapid prototyping, casual game mechanics, and mobile-first design principles. Gained experience in project management and client communication.</p>
+            </div>
+        </div>
+
+        <!-- Technical Skills -->
+        <div class="section">
+            <h2>Technical Expertise</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                <div>
+                    <h3 style="color: #065f46; margin-bottom: 15px; font-size: 1.3em;">🎮 Game Development</h3>
+                    <ul style="margin-left: 20px; color: #374151;">
+                        <li>Unity 2D Engine (2+ years)</li>
+                        <li>C# Programming & OOP</li>
+                        <li>Game Physics & Mechanics</li>
+                        <li>2D Animation & Timeline</li>
+                        <li>Sprite Management & Optimization</li>
+                        <li>Audio Systems & Sound Design</li>
+                        <li>Particle Systems & Visual Effects</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 style="color: #065f46; margin-bottom: 15px; font-size: 1.3em;">📱 Mobile Development</h3>
+                    <ul style="margin-left: 20px; color: #374151;">
+                        <li>Android & iOS Deployment</li>
+                        <li>Touch Controls & Gestures</li>
+                        <li>Performance Optimization</li>
+                        <li>Memory Management</li>
+                        <li>Google Play Games Integration</li>
+                        <li>In-App Purchases (IAP)</li>
+                        <li>Analytics & User Tracking</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Privacy Policy -->
+        <div class="section">
+            <h2>Privacy Policy</h2>
+            <div style="background: #f0fdf4; padding: 25px; border-radius: 15px; border-left: 5px solid #10b981;">
+                <h3 style="color: #065f46; margin-bottom: 15px;">Our Privacy Commitment</h3>
+                <ul style="margin: 15px 0 15px 20px; color: #374151;">
+                    <li>We collect only essential data required for game functionality</li>
+                    <li>All user information is encrypted and securely stored</li>
+                    <li>No personal data is sold or shared with unauthorized third parties</li>
+                    <li>Users have full rights to request data deletion</li>
+                    <li>Complete compliance with GDPR, COPPA, and international privacy laws</li>
+                    <li>Anonymous analytics used exclusively for game improvement</li>
+                </ul>
+                
+                <div style="margin-top: 20px; padding-top: 20px; border-top: 2px solid #d1fae5;">
+                    <p><strong style="color: #065f46;">Data We May Collect:</strong> Anonymous gameplay statistics, device performance metrics, crash reports, and user preferences to enhance gaming experience.</p>
+                    <p style="margin-top: 10px;"><strong style="color: #065f46;">Privacy Contact:</strong> blendmax444@gmail.com</p>
+                    <p style="margin-top: 15px; font-style: italic; color: #6b7280;">Last Updated: August 2025</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact -->
+        <div class="section">
+            <h2>Let's Build Something Amazing</h2>
+            <p style="font-size: 1.1em; color: #374151; margin-bottom: 25px;">Ready to bring your game idea to life? I'm always excited to collaborate on innovative projects and create memorable gaming experiences!</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                <div style="background: #f0fdf4; padding: 20px; border-radius: 15px; border: 2px solid #d1fae5;">
+                    <h4 style="color: #065f46; margin-bottom: 10px;">📧 Email</h4>
+                    <p>blendmax444@gmail.com</p>
+                </div>
+                <div style="background: #f0fdf4; padding: 20px; border-radius: 15px; border: 2px solid #d1fae5;">
+                    <h4 style="color: #065f46; margin-bottom: 10px;">📱 Phone</h4>
+                    <p>+84 376 868 055</p>
+                </div>
+                <div style="background: #f0fdf4; padding: 20px; border-radius: 15px; border: 2px solid #d1fae5;">
+                    <h4 style="color: #065f46; margin-bottom: 10px;">💻 GitHub</h4>
+                    <p>github.com/daophan23</p>
+                </div>
+                <div style="background: #f0fdf4; padding: 20px; border-radius: 15px; border: 2px solid #d1fae5;">
+                    <h4 style="color: #065f46; margin-bottom: 10px;">🌐 Portfolio</h4>
+                    <p>dao.bluetex.io.vn</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2025 DAO PHAN Game Development. Crafted with passion in Vietnam. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
