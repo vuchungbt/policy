@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planets Bubble Shooter - Privacy Policy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Animated background bubbles */
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            animation: float 6s ease-in-out infinite;
+            z-index: 0;
+        }
+
+        .bubble:nth-child(1) { width: 80px; height: 80px; left: 10%; animation-delay: 0s; }
+        .bubble:nth-child(2) { width: 60px; height: 60px; left: 20%; animation-delay: 2s; }
+        .bubble:nth-child(3) { width: 40px; height: 40px; left: 35%; animation-delay: 4s; }
+        .bubble:nth-child(4) { width: 100px; height: 100px; left: 50%; animation-delay: 0s; }
+        .bubble:nth-child(5) { width: 50px; height: 50px; left: 70%; animation-delay: 3s; }
+        .bubble:nth-child(6) { width: 90px; height: 90px; left: 85%; animation-delay: 1s; }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            margin-top: 40px;
+            margin-bottom: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            z-index: 10;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 35px;
+            padding-bottom: 25px;
+            border-bottom: 3px solid #667eea;
+            position: relative;
+        }
+
+        .game-title {
+            font-size: 2.8rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            font-weight: bold;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: #666;
+            font-weight: 300;
+        }
+
+        /* Planet decorations */
+        .planet-decoration {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            top: 10px;
+        }
+
+        .planet-decoration.left {
+            left: 20px;
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+        }
+
+        .planet-decoration.right {
+            right: 20px;
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
+        }
+
+        h2 {
+            color: #667eea;
+            margin-top: 30px;
+            margin-bottom: 18px;
+            font-size: 1.5rem;
+            border-left: 5px solid #764ba2;
+            padding-left: 18px;
+            position: relative;
+        }
+
+        h2::before {
+            content: "🪐";
+            position: absolute;
+            left: -35px;
+            top: 0;
+            font-size: 1.2rem;
+        }
+
+        p, li {
+            margin-bottom: 12px;
+            text-align: justify;
+            font-size: 1rem;
+        }
+
+        ul {
+            margin-left: 25px;
+            margin-bottom: 18px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            position: relative;
+        }
+
+        li::marker {
+            content: "🌍 ";
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 35px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-info::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255, 255, 255, 0.05) 10px,
+                rgba(255, 255, 255, 0.05) 20px
+            );
+            animation: shimmer 3s linear infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .contact-info h3 {
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .email {
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 12px 20px;
+            border-radius: 30px;
+            display: inline-block;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .email:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .last-updated {
+            text-align: center;
+            color: #888;
+            font-style: italic;
+            margin-top: 35px;
+            padding-top: 25px;
+            border-top: 2px solid #eee;
+            background: linear-gradient(135deg, #f8f9ff, #e8f0ff);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(102, 126, 234, 0.02);
+            border-radius: 10px;
+            border-left: 3px solid #667eea;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #fff5f5, #ffe8e8);
+            border: 1px solid #ff6b6b;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .highlight-box::before {
+            content: "⚠️";
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            font-size: 1.2rem;
+        }
+
+        .highlight-box p {
+            margin-left: 30px;
+            color: #d63031;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 15px;
+                padding: 20px;
+            }
+            
+            .game-title {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.3rem;
+            }
+
+            .planet-decoration {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated bubbles -->
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+
+    <div class="container">
+        <div class="header">
+            <div class="planet-decoration left"></div>
+            <div class="planet-decoration right"></div>
+            <h1 class="game-title">🪐 PLANETS BUBBLE SHOOTER</h1>
+            <p class="subtitle">Privacy Policy & Terms of Service</p>
+        </div>
+
+        <div class="section">
+            <h2>1. Introduction</h2>
+            <p>Welcome to Planets Bubble Shooter! We are committed to protecting your privacy and ensuring a safe, enjoyable gaming experience. This Privacy Policy explains how we collect, use, and safeguard your information when you play our cosmic bubble shooting adventure.</p>
+        </div>
+
+        <div class="section">
+            <h2>2. Information We Collect</h2>
+            <p>To provide you with the best gaming experience, we may collect the following information:</p>
+            <ul>
+                <li><strong>Game Progress:</strong> Your level progression, high scores, achievements, and in-game currency</li>
+                <li><strong>Device Information:</strong> Device model, operating system version, and unique device identifiers</li>
+                <li><strong>Usage Analytics:</strong> Gameplay patterns, session duration, and feature usage</li>
+                <li><strong>Performance Data:</strong> Crash reports and technical diagnostics to improve game stability</li>
+                <li><strong>Optional Data:</strong> Profile information if you choose to create an account</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>3. How We Use Your Information</h2>
+            <p>Your information helps us:</p>
+            <ul>
+                <li>Save your game progress and settings across devices</li>
+                <li>Provide personalized gameplay experiences</li>
+                <li>Improve game performance and fix technical issues</li>
+                <li>Develop new features and content</li>
+                <li>Ensure fair play and prevent cheating</li>
+                <li>Provide customer support when needed</li>
+                <li>Send important game updates and notifications</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>4. Data Security & Storage</h2>
+            <p>We implement industry-standard security measures to protect your information:</p>
+            <ul>
+                <li>Encrypted data transmission and storage</li>
+                <li>Regular security audits and updates</li>
+                <li>Limited access to personal information</li>
+                <li>Secure servers with backup systems</li>
+                <li>Compliance with international data protection standards</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>5. Third-Party Services</h2>
+            <p>Planets Bubble Shooter may integrate with third-party services for enhanced functionality:</p>
+            <ul>
+                <li><strong>Analytics Services:</strong> To understand game performance and user behavior</li>
+                <li><strong>Advertising Networks:</strong> To display relevant advertisements (if applicable)</li>
+                <li><strong>Social Features:</strong> To enable sharing achievements and connecting with friends</li>
+                <li><strong>Payment Processors:</strong> For secure in-app purchase transactions</li>
+            </ul>
+            <p>These services have their own privacy policies, which we encourage you to review.</p>
+        </div>
+
+        <div class="highlight-box">
+            <p><strong>Children's Privacy Protection:</strong> Planets Bubble Shooter is designed to be family-friendly and suitable for all ages. We do not knowingly collect personal information from children under 13 without parental consent.</p>
+        </div>
+
+        <div class="section">
+            <h2>6. Your Privacy Rights</h2>
+            <p>You have the right to:</p>
+            <ul>
+                <li>Access your personal information</li>
+                <li>Request correction of inaccurate data</li>
+                <li>Request deletion of your personal data</li>
+                <li>Opt-out of certain data collection</li>
+                <li>Withdraw consent at any time</li>
+                <li>Receive a copy of your data in a portable format</li>
+                <li>Lodge a complaint with data protection authorities</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>7. In-App Purchases & Virtual Currency</h2>
+            <p>Planets Bubble Shooter may offer in-app purchases for virtual items and currency:</p>
+            <ul>
+                <li>All purchases are processed through secure payment systems</li>
+                <li>Virtual items have no real-world value</li>
+                <li>Purchase confirmations are sent via your app store account</li>
+                <li>Refund policies follow your app store's terms and conditions</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>8. Data Retention</h2>
+            <p>We retain your information only as long as necessary to:</p>
+            <ul>
+                <li>Provide the game service and maintain your progress</li>
+                <li>Comply with legal obligations</li>
+                <li>Resolve disputes and enforce agreements</li>
+                <li>Improve our services and develop new features</li>
+            </ul>
+            <p>You may request deletion of your data at any time by contacting us.</p>
+        </div>
+
+        <div class="section">
+            <h2>9. Updates to This Policy</h2>
+            <p>We may update this Privacy Policy periodically to reflect changes in our practices or legal requirements. When we make significant changes, we will:</p>
+            <ul>
+                <li>Update the "Last Updated" date</li>
+                <li>Notify you through the game or via email</li>
+                <li>Provide a summary of key changes</li>
+                <li>Give you time to review the updated policy</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>10. International Data Transfers</h2>
+            <p>If you access Planets Bubble Shooter from outside our primary jurisdiction, please note that your information may be transferred to and processed in countries where our servers and service providers are located. We ensure appropriate safeguards are in place for such transfers.</p>
+        </div>
+
+        <div class="section">
+            <h2>11. Contact & Support</h2>
+            <p>We value your feedback and are here to help with any questions or concerns about your privacy or the game. Our support team strives to respond to all inquiries within 48 hours.</p>
+        </div>
+
+        <div class="contact-info">
+            <h3>🚀 Get in Touch</h3>
+            <p>For privacy questions, data requests, or game support:</p>
+            <a href="mailto:nomanhussain852@gmail.com" class="email"> nomanhussain852@gmail.com</a>
+            <p style="margin-top: 15px; font-size: 0.9rem; opacity: 0.9;">We're committed to protecting your privacy and providing excellent customer service!</p>
+        </div>
+
+        <div class="last-updated">
+            <p><strong>🕐 Last Updated:</strong> September 1, 2025</p>
+            <p style="margin-top: 10px; font-size: 0.9rem;">This policy is effective immediately and governs your use of Planets Bubble Shooter.</p>
+        </div>
+    </div>
+</body>
+</html>
