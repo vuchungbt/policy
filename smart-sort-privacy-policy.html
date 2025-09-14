@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Sort - Letters To Numbers - Privacy Policy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Animated floating elements */
+        .floating-element {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            animation: float 8s ease-in-out infinite;
+            z-index: 0;
+        }
+
+        .floating-element:nth-child(1) { 
+            width: 60px; height: 60px; left: 5%; top: 20%; animation-delay: 0s;
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            border-radius: 15px;
+        }
+        .floating-element:nth-child(2) { 
+            width: 50px; height: 50px; left: 15%; top: 60%; animation-delay: 2s;
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
+            border-radius: 10px;
+        }
+        .floating-element:nth-child(3) { 
+            width: 40px; height: 40px; left: 80%; top: 30%; animation-delay: 4s;
+            background: linear-gradient(135deg, #fd79a8, #e84393);
+            border-radius: 50%;
+        }
+        .floating-element:nth-child(4) { 
+            width: 70px; height: 70px; left: 90%; top: 70%; animation-delay: 1s;
+            background: linear-gradient(135deg, #00b894, #00a085);
+            border-radius: 20px;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            margin-top: 40px;
+            margin-bottom: 40px;
+            border-radius: 25px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            z-index: 10;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 4px solid #667eea;
+            position: relative;
+            background: linear-gradient(135deg, #f8f9ff, #e8f0ff);
+            border-radius: 20px;
+            padding: 30px;
+            margin: -20px -20px 40px -20px;
+        }
+
+        .game-title {
+            font-size: 3rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            font-weight: bold;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 1.4rem;
+            color: #666;
+            font-weight: 300;
+            margin-bottom: 10px;
+        }
+
+        .game-description {
+            font-size: 1rem;
+            color: #888;
+            font-style: italic;
+        }
+
+        /* Game theme decorations */
+        .game-decoration {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            font-weight: bold;
+        }
+
+        .game-decoration.left {
+            left: 30px;
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+        }
+
+        .game-decoration.right {
+            right: 30px;
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
+        }
+
+        h2 {
+            color: #667eea;
+            margin-top: 35px;
+            margin-bottom: 20px;
+            font-size: 1.6rem;
+            border-left: 6px solid #764ba2;
+            padding-left: 20px;
+            position: relative;
+            background: rgba(102, 126, 234, 0.05);
+            padding: 15px 20px;
+            border-radius: 10px;
+        }
+
+        h2::before {
+            content: "🎮";
+            position: absolute;
+            left: -40px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.3rem;
+            background: white;
+            padding: 5px;
+            border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        p, li {
+            margin-bottom: 12px;
+            text-align: justify;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        ul {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        li::marker {
+            content: "🔸 ";
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 30px;
+            border-radius: 20px;
+            margin-top: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-info::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 15px,
+                rgba(255, 255, 255, 0.05) 15px,
+                rgba(255, 255, 255, 0.05) 30px
+            );
+            animation: shimmer 4s linear infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .contact-info h3 {
+            margin-bottom: 18px;
+            font-size: 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .email {
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px 25px;
+            border-radius: 35px;
+            display: inline-block;
+            margin-top: 18px;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .email:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .last-updated {
+            text-align: center;
+            color: #888;
+            font-style: italic;
+            margin-top: 40px;
+            padding-top: 25px;
+            border-top: 2px solid #eee;
+            background: linear-gradient(135deg, #f8f9ff, #e8f0ff);
+            padding: 25px;
+            border-radius: 15px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+            padding: 25px;
+            background: rgba(102, 126, 234, 0.02);
+            border-radius: 15px;
+            border-left: 4px solid #667eea;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #fff8e1, #ffecb3);
+            border: 2px solid #ffc107;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 25px 0;
+            position: relative;
+        }
+
+        .highlight-box::before {
+            content: "⚠️";
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            font-size: 1.5rem;
+        }
+
+        .highlight-box p {
+            margin-left: 35px;
+            color: #f57c00;
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .feature-item {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border-top: 4px solid #667eea;
+        }
+
+        .feature-item h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 15px;
+                padding: 20px;
+            }
+            
+            .game-title {
+                font-size: 2.3rem;
+            }
+            
+            h2 {
+                font-size: 1.4rem;
+            }
+
+            .game-decoration {
+                width: 35px;
+                height: 35px;
+                font-size: 1.2rem;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating game elements -->
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+
+    <div class="container">
+        <div class="header">
+            <div class="game-decoration left">A</div>
+            <div class="game-decoration right">1</div>
+            <h1 class="game-title">SMART SORT<br>LETTERS TO NUMBERS</h1>
+            <p class="subtitle">Privacy Policy & Data Protection</p>
+            <p class="game-description">Puzzle Sorting Game</p>
+        </div>
+
+        <div class="section">
+            <h2>1. Introduction</h2>
+            <p>Welcome to Smart Sort - Letters To Numbers! We are committed to protecting your privacy and providing a secure gaming environment. This Privacy Policy explains how we collect, use, and protect your information while you enjoy our puzzle sorting game.</p>
+        </div>
+
+        <div class="section">
+            <h2>2. Information We Collect</h2>
+            <p>To provide the best gaming experience, we may collect the following information:</p>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h4>📊 Game Progress</h4>
+                    <p>Your scores, level progression, and achievements</p>
+                </div>
+                <div class="feature-item">
+                    <h4>📱 Device Data</h4>
+                    <p>Device type, OS version, and performance metrics</p>
+                </div>
+                <div class="feature-item">
+                    <h4>🎮 Gameplay Analytics</h4>
+                    <p>Usage patterns, session duration, and feature interactions</p>
+                </div>
+                <div class="feature-item">
+                    <h4>🔧 Technical Info</h4>
+                    <p>Crash reports and error logs for app improvement</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>3. How We Use Your Information</h2>
+            <p>Your information helps us enhance your gaming experience by:</p>
+            <ul>
+                <li><strong>Game Progress:</strong> Saving your achievements and unlocked content</li>
+                <li><strong>Personalization:</strong> Adapting difficulty levels based on your performance</li>
+                <li><strong>Improvement:</strong> Developing better features and gameplay mechanics</li>
+                <li><strong>Technical Support:</strong> Fixing bugs and optimizing app performance</li>
+                <li><strong>Analytics:</strong> Understanding usage patterns to enhance user experience</li>
+                <li><strong>Security:</strong> Ensuring a safe and fair gaming environment</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>4. Data Security & Protection</h2>
+            <p>We implement comprehensive security measures to protect your information:</p>
+            <ul>
+                <li>Advanced encryption for all data transmission and storage</li>
+                <li>Regular security audits and vulnerability assessments</li>
+                <li>Strict access controls and employee training programs</li>
+                <li>Secure cloud infrastructure with automatic backups</li>
+                <li>Compliance with international data protection regulations</li>
+                <li>Multi-layered security protocols and monitoring systems</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>5. Third-Party Services</h2>
+            <p>Smart Sort may integrate with various third-party services:</p>
+            <ul>
+                <li><strong>Analytics Services:</strong> Game performance and user behavior analysis</li>
+                <li><strong>Cloud Storage:</strong> Secure backup of your game progress</li>
+                <li><strong>Advertising Networks:</strong> Relevant advertisements (if applicable)</li>
+                <li><strong>Social Features:</strong> Sharing achievements and connecting with friends</li>
+                <li><strong>Payment Processors:</strong> Secure in-app purchase transactions</li>
+                <li><strong>Performance Monitoring:</strong> App stability and crash reporting</li>
+            </ul>
+            <p>All third-party services are carefully selected for security and privacy compliance.</p>
+        </div>
+
+        <div class="highlight-box">
+            <p><strong>Children's Privacy Protection:</strong> Smart Sort is suitable for all ages. We do not knowingly collect personal information from children under 13 without verified parental consent. Parents can contact us to review, modify, or delete their child's information.</p>
+        </div>
+
+        <div class="section">
+            <h2>6. Your Privacy Rights</h2>
+            <p>You have comprehensive rights regarding your personal data:</p>
+            <ul>
+                <li><strong>Access:</strong> View all information we have collected about you</li>
+                <li><strong>Correction:</strong> Update any inaccurate personal or game data</li>
+                <li><strong>Deletion:</strong> Request complete removal of your data from our systems</li>
+                <li><strong>Portability:</strong> Receive your data in a transferable format</li>
+                <li><strong>Restriction:</strong> Limit how your data is processed</li>
+                <li><strong>Objection:</strong> Opt-out of certain data collection practices</li>
+                <li><strong>Withdrawal:</strong> Revoke consent for data processing at any time</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>7. Data Retention Policy</h2>
+            <p>We retain your information according to these guidelines:</p>
+            <ul>
+                <li><strong>Active Users:</strong> Data retained while you actively use the app</li>
+                <li><strong>Inactive Accounts:</strong> Automatic deletion after 24 months of inactivity</li>
+                <li><strong>Legal Requirements:</strong> Some data may be retained for compliance purposes</li>
+                <li><strong>Game Records:</strong> High scores and achievements can be exported before deletion</li>
+                <li><strong>Anonymous Analytics:</strong> Aggregated, non-personal data may be retained longer</li>
+                <li><strong>Support Records:</strong> Customer service interactions retained as needed</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>8. In-App Purchases & Virtual Items</h2>
+            <p>Smart Sort may offer in-app purchases and virtual items:</p>
+            <ul>
+                <li>All transactions are processed through secure payment systems</li>
+                <li>Virtual items and currencies have no real-world monetary value</li>
+                <li>Purchase receipts and confirmations are managed by your app store</li>
+                <li>Refund policies follow your app store's terms and conditions</li>
+                <li>Payment information is not stored on our servers</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>9. International Data Transfers</h2>
+            <p>If you use Smart Sort from outside our primary jurisdiction:</p>
+            <ul>
+                <li>Your data may be transferred to secure servers in other countries</li>
+                <li>We ensure adequate protection through legal safeguards and contracts</li>
+                <li>All transfers comply with applicable privacy laws and regulations</li>
+                <li>Additional protections are implemented for sensitive information</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>10. Updates to This Policy</h2>
+            <p>We may update this Privacy Policy to reflect changes in our practices:</p>
+            <ul>
+                <li><strong>Notification:</strong> We'll notify you of significant changes through the app</li>
+                <li><strong>Review Period:</strong> You'll have time to review changes before they take effect</li>
+                <li><strong>Consent:</strong> Continued use implies acceptance of updated terms</li>
+                <li><strong>Version History:</strong> Previous versions available upon request</li>
+                <li><strong>Transparency:</strong> Clear explanations of any policy modifications</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>11. Support & Feedback</h2>
+            <p>We value your feedback and are committed to providing excellent customer service. If you have questions about this Privacy Policy, need technical support, or want to report any issues, please don't hesitate to contact us. We strive to respond to all inquiries within 48 hours.</p>
+        </div>
+
+        <div class="contact-info">
+            <h3>📧 Contact Our Support Team</h3> 
+            <a href="mailto:studiojhbangladesh@gmail.com" class="email">studiojhbangladesh@gmail.com</a>
+           
+        </div>
+
+        <div class="last-updated">
+            <p><strong>📅 Last Updated:</strong> September 12, 2025</p> 
+        </div>
+    </div>
+</body>
+</html>
