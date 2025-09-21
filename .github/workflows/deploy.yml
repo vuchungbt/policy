@@ -1,0 +1,15 @@
+name: Deploy on push
+on:
+  push:
+    branches: [ "main" ]
+jobs:
+  deploy:
+    runs-on: [self-hosted, policy]
+    steps:
+      - name: Update /var/www/html/policy
+        run: |
+          git config --global --add safe.directory /var/www/html/policy
+          cd /var/www/html/policy
+          git fetch --all
+          git reset --hard origin/main
+          echo "Deployed!"
