@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merge Star Blast - Privacy Policy & Terms of Service</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .header {
+            text-align: center;
+            padding: 40px 0;
+            background: linear-gradient(45deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3);
+            background-size: 300% 300%;
+            animation: gradientShift 6s ease infinite;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .game-title {
+            font-size: 3.5em;
+            font-weight: bold;
+            color: white;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+            margin-bottom: 10px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .tab-button {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .tab-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+        }
+
+        .tab-button.active {
+            background: linear-gradient(45deg, #ff6b6b, #feca57);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.6);
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h2 {
+            color: #667eea;
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(45deg, #ff6b6b, #feca57);
+            border-radius: 2px;
+        }
+
+        h3 {
+            color: #555;
+            font-size: 1.4em;
+            margin: 25px 0 15px 0;
+            padding: 10px 0;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        p, li {
+            margin-bottom: 15px;
+            text-align: justify;
+            font-size: 1.05em;
+        }
+
+        ul {
+            padding-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .contact-info h3 {
+            color: white;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .email-link {
+            color: #feca57;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+        }
+
+        .email-link:hover {
+            color: #ff6b6b;
+            text-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid #667eea;
+            transition: all 0.3s ease;
+        }
+
+        .section-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .last-updated {
+            text-align: center;
+            font-style: italic;
+            color: #888;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #f0f0f0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                padding: 15px;
+            }
+            
+            .game-title {
+                font-size: 2.5em;
+            }
+            
+            .tab-button {
+                padding: 12px 20px;
+                font-size: 1em;
+            }
+            
+            h2 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-content">
+                <h1 class="game-title">⭐ Merge Star Blast ⭐</h1>
+            </div>
+        </div>
+
+        <div class="nav-tabs">
+            <button class="tab-button active" onclick="showTab('privacy')">Privacy Policy</button>
+            <button class="tab-button" onclick="showTab('terms')">Terms of Service</button>
+            <button class="tab-button" onclick="showTab('contact')">Contact Us</button>
+        </div>
+
+        <div id="privacy" class="tab-content active">
+            <h2>🔒 Privacy Policy</h2>
+            
+            <div class="section-card">
+                <h3>1. Information We Collect</h3>
+                <p>Merge Star Blast may collect the following types of information:</p>
+                <ul>
+                    <li><strong>Device Information:</strong> We may collect information about your mobile device, including device model, operating system version, and unique device identifiers.</li>
+                    <li><strong>Game Progress Data:</strong> Your game progress, achievements, scores, and level completions are stored to provide you with a seamless gaming experience.</li>
+                    <li><strong>Usage Analytics:</strong> We collect anonymous usage statistics to improve our game performance and user experience.</li>
+                    <li><strong>Advertising Data:</strong> If you interact with advertisements, we may collect data related to ad impressions and clicks.</li>
+                </ul>
+            </div>
+
+            <div class="section-card">
+                <h3>2. How We Use Your Information</h3>
+                <p>The information we collect is used for:</p>
+                <ul>
+                    <li>Providing and maintaining the game service</li>
+                    <li>Saving your game progress across devices</li>
+                    <li>Improving game performance and fixing bugs</li>
+                    <li>Personalizing your gaming experience</li>
+                    <li>Displaying relevant advertisements</li>
+                    <li>Communicating with you about game updates</li>
+                </ul>
+            </div>
+
+            <div class="section-card">
+                <h3>3. Information Sharing</h3>
+                <p>We do not sell, trade, or rent your personal information to third parties. We may share information only in the following circumstances:</p>
+                <ul>
+                    <li>With third-party service providers who assist in game operation</li>
+                    <li>For advertising purposes through our advertising partners</li>
+                    <li>When required by law or to protect our rights</li>
+                    <li>In the event of a merger or acquisition</li>
+                </ul>
+            </div>
+
+            <div class="section-card">
+                <h3>4. Data Security</h3>
+                <p>We implement appropriate security measures to protect your information against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the Internet is 100% secure.</p>
+            </div>
+
+            <div class="section-card">
+                <h3>5. Children's Privacy</h3>
+                <p>Merge Star Blast does not knowingly collect personal information from children under 13. If you are a parent and believe your child has provided us with personal information, please contact us immediately.</p>
+            </div>
+
+            <div class="section-card">
+                <h3>6. Third-Party Services</h3>
+                <p>Our game may contain links to third-party websites or services. We are not responsible for the privacy practices of these third parties. We encourage you to review their privacy policies.</p>
+            </div>
+        </div>
+
+        <div id="terms" class="tab-content">
+            <h2>📋 Terms of Service</h2>
+            
+            <div class="section-card">
+                <h3>1. Acceptance of Terms</h3>
+                <p>By downloading, installing, or playing Merge Star Blast, you agree to be bound by these Terms of Service. If you do not agree with these terms, please do not use our game.</p>
+            </div>
+
+            <div class="section-card">
+                <h3>2. License to Use</h3>
+                <p>We grant you a limited, non-exclusive, non-transferable, revocable license to use Merge Star Blast for your personal entertainment purposes. This license does not allow you to:</p>
+                <ul>
+                    <li>Modify, reverse engineer, or create derivative works</li>
+                    <li>Use automated systems or bots to play the game</li>
+                    <li>Attempt to gain unauthorized access to game systems</li>
+                    <li>Sell, transfer, or sublicense your account</li>
+                </ul>
+            </div>
+
+            <div class="section-card">
+                <h3>3. User Conduct</h3>
+                <p>You agree not to:</p>
+                <ul>
+                    <li>Use the game for any illegal or unauthorized purpose</li>
+                    <li>Interfere with or disrupt the game servers</li>
+                    <li>Upload or transmit viruses or malicious code</li>
+                    <li>Harass or harm other players</li>
+                    <li>Violate any applicable laws or regulations</li>
+                </ul>
+            </div>
+
+            <div class="section-card">
+                <h3>4. Virtual Items and Purchases</h3>
+                <p>The game may offer virtual items, currency, or premium features for purchase. All purchases are final and non-refundable unless required by law. Virtual items have no real-world value and cannot be exchanged for real money.</p>
+            </div>
+
+            <div class="section-card">
+                <h3>5. Intellectual Property</h3>
+                <p>All content in Merge Star Blast, including graphics, sounds, music, text, and gameplay mechanics, is owned by us and protected by copyright and other intellectual property laws.</p>
+            </div>
+
+            <div class="section-card">
+                <h3>6. Disclaimer of Warranties</h3>
+                <p>The game is provided "as is" without warranties of any kind. We do not guarantee that the game will be error-free, uninterrupted, or free from harmful components.</p>
+            </div>
+
+            <div class="section-card">
+                <h3>7. Limitation of Liability</h3>
+                <p>To the maximum extent permitted by law, we shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of the game.</p>
+            </div>
+
+            <div class="section-card">
+                <h3>8. Termination</h3>
+                <p>We reserve the right to terminate or suspend your access to the game at any time, with or without cause, and with or without notice.</p>
+            </div>
+
+            <div class="section-card">
+                <h3>9. Changes to Terms</h3>
+                <p>We may update these Terms of Service from time to time. Continued use of the game after changes constitutes acceptance of the new terms.</p>
+            </div>
+        </div>
+
+        <div id="contact" class="tab-content">
+            <h2>📞 Contact Information</h2>
+            
+            <div class="contact-info">
+                <h3>Get in Touch</h3>
+                <p>If you have any questions, concerns, or feedback regarding Merge Star Blast, our Privacy Policy, or Terms of Service, please don't hesitate to contact us.</p>
+                
+                <p><strong>Email Support:</strong><br>
+                <a href="mailto:vanluannd95@gmail.com" class="email-link">vanluannd95@gmail.com</a></p>
+                
+                <p>We strive to respond to all inquiries within 48 hours. Please include as much detail as possible when contacting us so we can assist you effectively.</p>
+            </div>
+
+            <div class="section-card">
+                <h3>What to Include in Your Message</h3>
+                <ul>
+                    <li>Your device model and operating system</li>
+                    <li>Game version (if applicable)</li>
+                    <li>Detailed description of your issue or question</li>
+                    <li>Screenshots (if relevant to a bug report)</li>
+                </ul>
+            </div>
+
+            <div class="section-card">
+                <h3>Response Times</h3>
+                <p>We aim to provide timely responses to all inquiries:</p>
+                <ul>
+                    <li><strong>Technical Issues:</strong> 24-48 hours</li>
+                    <li><strong>General Questions:</strong> 24-72 hours</li>
+                    <li><strong>Privacy Concerns:</strong> 24 hours</li>
+                    <li><strong>Billing Issues:</strong> 12-24 hours</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="last-updated">
+            <p><strong>Last Updated:</strong> September 20, 2025</p>
+            <p>This policy is effective immediately and supersedes any previous versions.</p>
+        </div>
+    </div>
+
+    <script>
+        function showTab(tabName) {
+            // Hide all tab contents
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+            });
+
+            // Remove active class from all buttons
+            const tabButtons = document.querySelectorAll('.tab-button');
+            tabButtons.forEach(button => {
+                button.classList.remove('active');
+            });
+
+            // Show selected tab content
+            document.getElementById(tabName).classList.add('active');
+
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+
+        // Add smooth scrolling for better UX
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('a[href^="#"]');
+            for (const link of links) {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
