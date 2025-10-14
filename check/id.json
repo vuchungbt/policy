@@ -1,9 +1,11 @@
 {
 	"name":"GAME A",
-	"id":"",
-	"created_date":"",
-	"allow":"",
-	"code":"",
-	"status":"",
-	"url": "" 
+	"id":"C123",
+	"version":"1.0.0",
+	"created_date":"10-14-2025",
+	"updated_date":"10-14-2025",
+	"disable":0,
+	"code":"FULL_IAP",
+	"status":"ONLINE",
+	"url": "https://free.blwsmartware.net/cyber-orb-privacy-policy.html" 
 }
