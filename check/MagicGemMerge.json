@@ -1,10 +1,10 @@
 {
-	"name":"GAME A",
-	"id":"C123",
+	"name":"MagicGemMerge",
+	"id":"MagicGemMerge",
 	"version":"1.0.0",
 	"created_date":"10-14-2025",
 	"updated_date":"10-14-2025",
-	"disable":1,
+	"disable":0,
 	"code":"FULL_IAP",
 	"status":"ONLINE",
 	"url": "https://free.blwsmartware.net/cyber-orb-privacy-policy.html" 
