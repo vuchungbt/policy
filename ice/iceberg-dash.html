@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iceberg Dash - Download Game</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 30px;
+            padding: 60px 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 30px;
+            animation: slideDown 0.6s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .logo {
+            width: 150px;
+            height: 150px;
+            background-image: url('icon_small.png');
+            background-size: cover;
+            background-position: center;
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: white;
+            filter: drop-shadow(0 10px 30px rgba(102, 126, 234, 0.4))
+                    drop-shadow(0 20px 60px rgba(102, 126, 234, 0.3));
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05) translateY(-5px);
+            filter: drop-shadow(0 15px 40px rgba(102, 126, 234, 0.5))
+                    drop-shadow(0 25px 70px rgba(102, 126, 234, 0.4));
+        }
+
+        .download-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .download-card {
+            text-align: center;
+            animation: fadeIn 0.8s ease-out backwards;
+        }
+
+        .download-card:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .download-card:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .download-card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .download-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(245, 87, 108, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .download-image::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent,
+                rgba(255, 255, 255, 0.3),
+                transparent
+            );
+            transform: rotate(45deg);
+            transition: all 0.5s ease;
+        }
+
+        .download-image:hover::before {
+            left: 100%;
+        }
+
+        .download-image:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(245, 87, 108, 0.4);
+        }
+
+        .footer {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 2px solid #e0e0e0;
+            animation: fadeIn 1s ease-out backwards;
+            animation-delay: 0.6s;
+        }
+
+        .footer a {
+            display: block;
+            margin: 10px 0;
+            color: #667eea;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .footer a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .footer a:hover {
+            color: #764ba2;
+        }
+
+        .footer a:hover::after {
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 20px;
+                border-radius: 20px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .logo {
+                width: 120px;
+                height: 120px;
+                font-size: 1rem;
+            }
+
+            .download-section {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .download-image {
+                height: 200px;
+            }
+
+            .download-card h2 {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .logo {
+                width: 100px;
+                height: 100px;
+                font-size: 0.9rem;
+            }
+
+            .footer a {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>ICEBERG DASH</h1>
+            <div class="logo-container">
+                <div class="logo"> 
+				<img src
+				</div>
+            </div>
+        </div>
+
+        <div class="download-section">
+            <div class="download-card">
+                <h2>Download for Android</h2>
+                <a href="https://play.google.com/store/apps/details?id=com.IcebergStudio.IcebergDash" class="download-image">
+                     <img height="100%" src="google-play-store.png" />
+                </a>
+            </div>
+
+            <div class="download-card">
+                <h2>Download for iOS</h2>
+                <a class="download-image">
+                    <span>In Review</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <a href="https://free.blwsmartware.net/ice-berg-dash-policy.html">Privacy Policy</a>
+            <div href="#">Contact Support: cixgenapp@gmail.com </div>
+        </div>
+    </div>
+</body>
+</html>
