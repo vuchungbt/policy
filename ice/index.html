@@ -213,50 +213,81 @@
             left: 100%;
         }
 
-        .download-image:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 15px 40px rgba(245, 87, 108, 0.4);
-        }
-
-        .footer {
-            text-align: center;
-            padding-top: 30px;
+          .footer {
+            padding-top: 40px;
             border-top: 2px solid #e0e0e0;
             animation: fadeIn 1s ease-out backwards;
             animation-delay: 0.6s;
         }
 
-        .footer a {
-            display: block;
-            margin: 10px 0;
-            color: #667eea;
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 500;
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        .footer-item {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            padding: 25px 20px;
+            border-radius: 15px;
+            text-align: center;
             transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .footer-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.2);
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.15) 100%);
+        }
+
+        .footer-item h3 {
+            font-size: 0.9rem;
+            color: #764ba2;
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-item a,
+        .footer-item .contact-text {
+            color: #333;
+            text-decoration: none;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            transition: all 0.3s ease;
+            display: block;
+        }
+
+        .footer-item a {
             position: relative;
         }
 
-        .footer a::after {
+        .footer-item a::after {
             content: '';
             position: absolute;
             width: 0;
             height: 2px;
-            bottom: -5px;
+            bottom: -3px;
             left: 50%;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             transition: all 0.3s ease;
             transform: translateX(-50%);
         }
 
-        .footer a:hover {
-            color: #764ba2;
+        .footer-item a:hover {
+            color: #667eea;
         }
 
-        .footer a:hover::after {
-            width: 100%;
+        .footer-item a:hover::after {
+            width: 80%;
         }
 
+        .contact-text {
+            word-wrap: break-word;
+        }
         @media (max-width: 768px) {
             .container {
                 padding: 40px 20px;
@@ -296,11 +327,7 @@
                 width: 100px;
                 height: 100px;
                 font-size: 0.9rem;
-            }
-
-            .footer a {
-                font-size: 1rem;
-            }
+            } 
         }
     </style>
 </head>
@@ -336,11 +363,28 @@
                 <img height="100%" src="qr.png" /> 
             </div> 
         </div>
+		
 
         <div class="footer">
-            <a href="https://free.blwsmartware.net/ice-berg-dash-policy.html">Privacy Policy</a>
-            <div href="#">Contact Support: cixgenapp@gmail.com </div>
-        </div>
+			<div class="footer-grid">
+				<div class="footer-item">
+					<h3>📧 Support</h3>
+					<div class="contact-text">martinezaz7z90@gmail.com</div>
+					<small style="display: block; margin-top: 5px;">Report/Technical/Q&A</small>
+				</div>
+				
+				<div class="footer-item">
+					<h3>💼 Business</h3>
+					<div class="contact-text">cixgenapp@gmail.com</div>
+					<small style="display: block; margin-top: 5px;">Advertisement/Financial</small>
+				</div>
+				
+				<div class="footer-item">
+					<h3>🔒 Privacy</h3>
+					<a href="https://free.blwsmartware.net/ice-berg-dash-policy.html" target="_blank">Privacy Policy</a>
+				</div>
+			</div>
+		</div>
     </div>
 </body>
 </html>
