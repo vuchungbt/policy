@@ -4,7 +4,7 @@
 	"version":"1.0.1",
 	"created_date":"2-24-2026",
 	"updated_date":"2-22-2026",
-	"disable":0,
+	"disable":1,
 	"code":"FULL_IAP",
 	"status":"ONLINE",
 	"msg":"block connect by api endpoint",
