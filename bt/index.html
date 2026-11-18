@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google Play Development Services</title>
-    <meta name="description" content="Indie game developer Google Play. Dịch vụ: tài khoản Console, Unity/source code, closed testing 14 ngày, transfer app, upload production, AdMob &amp; IAP. Liên hệ: 0962779762.">
+    <title>Vũ Chung — Phát triển Website, Mobile App &amp; Game Unity</title>
+    <meta name="description" content="Vũ Chung — phát triển và hỗ trợ website, ứng dụng mobile Android, game Unity. Backend, API, tích hợp hệ thống và phát hành Google Play. Liên hệ: 0962779762.">
     <!-- Chia sẻ MXH: nếu site không nằm tại /policy/bt/ thì sửa og:url và og:image cho đúng URL tuyệt đối -->
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Dịch vụ Google Play &amp; Unity Game">
+    <meta property="og:site_name" content="Vũ Chung — Website, Mobile App &amp; Game">
     <meta property="og:locale" content="vi_VN">
     <meta property="og:url" content="https://vuchungbt.com">
-    <meta property="og:title" content="Dịch vụ Google Play &amp; Unity Game">
-    <meta property="og:description" content="Phát triển &amp; phát hành game trên Google Play. Hỗ trợ Console, Unity/source code, closed testing 14 ngày, transfer app, build AAB lên production, tích hợp AdMob &amp; IAP.">
+    <meta property="og:title" content="Vũ Chung — Phát triển Website, Mobile App &amp; Game Unity">
+    <meta property="og:description" content="Đồng hành cùng sản phẩm từ ý tưởng, phát triển đến vận hành. Website, ứng dụng mobile Android, backend/API, game Unity và dịch vụ phát hành Google Play.">
     <meta property="og:image" content="https://vuchungbt.com/img/h21.jpg">
-    <meta property="og:image:alt" content="Dịch vụ Google Play và game Unity">
+    <meta property="og:image:alt" content="Google Play — một trong các nền tảng phát hành sản phẩm của Vũ Chung">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Dịch vụ Google Play &amp; Unity Game">
-    <meta name="twitter:description" content="Phát triển &amp; phát hành game trên Google Play. Console, Unity, closed testing, transfer app, AdMob &amp; IAP.">
+    <meta name="twitter:title" content="Vũ Chung — Website, Mobile App &amp; Game Unity">
+    <meta name="twitter:description" content="Phát triển website, ứng dụng mobile Android, backend/API và game Unity. Hỗ trợ tích hợp, hoàn thiện và phát hành sản phẩm.">
     <meta name="twitter:image" content="https://vuchungbt.com/img/h21.jpg">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -561,18 +561,130 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* Shared layout for the expanded product portfolio. */
+        html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+        a { text-underline-offset: 4px; }
+        a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+            outline: 3px solid #e7ad39;
+            outline-offset: 5px;
+        }
+        .skip-link { position: fixed; top: -80px; left: 16px; z-index: 10001; padding: 12px 20px; background: white; color: #333; }
+        .skip-link:focus { top: 12px; }
+        .site-header { background: #fff; border-bottom: 1px solid #e9e7f2; }
+        .site-nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+        .brand { color: #44346d; font-size: 1.25rem; font-weight: 750; text-decoration: none; }
+        .nav-links { display: flex; flex-wrap: wrap; gap: 24px; }
+        .nav-links a { color: #4b4658; font-size: .95rem; text-decoration: none; }
+        .nav-links a:hover { color: #6746a2; text-decoration: underline; }
+        .hero { min-height: auto; padding: 94px 0; }
+        .hero-content { grid-template-columns: 1.35fr 1fr; gap: 56px; animation: none; }
+        .hero-text h1 { font-size: clamp(3rem, 6vw, 4.5rem); line-height: 1.1; }
+        .eyebrow { font-size: .8rem; letter-spacing: .15em; text-transform: uppercase; font-weight: 700; margin-bottom: 20px; }
+        .hero-text .subtitle { font-size: clamp(1.25rem, 3vw, 1.8rem); font-weight: 600; line-height: 1.4; }
+        .hero-text .description { opacity: .95; }
+        .hero-card { animation: none; padding: 32px; }
+        .hero-card h2 { color: white; font-size: 1.5rem; margin-bottom: 12px; }
+        .hero-card p { color: rgba(255,255,255,.94); margin-bottom: 24px; }
+        .focus-list { list-style: none; color: white; }
+        .focus-list li { padding: 17px 0; border-top: 1px solid rgba(255,255,255,.25); }
+        .focus-list strong { display: block; font-size: 1.15rem; }
+        .focus-list span { color: rgba(255,255,255,.88); font-size: .94rem; }
+        .contact-item { text-decoration: none; overflow-wrap: anywhere; }
+        .btn-primary { background: #fff; color: #52377e; }
+        .cta-buttons { flex-wrap: wrap; gap: 12px; }
+        .section-heading { max-width: 760px; margin: 0 auto 42px; text-align: center; }
+        .section-heading .section-title { margin-bottom: 28px; }
+        .section-heading p { color: #5e6372; font-size: 1.05rem; }
+        .skills-section { background: #f5f5fa; padding: 80px 0; }
+        .services-section { background: #fff; }
+        .service-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+        .service-card { background: #f8f7fc; border: 1px solid #e7e2f0; border-radius: 16px; padding: 30px; }
+        .service-number { display: inline-block; color: #70529d; font-weight: 700; font-size: .85rem; margin-bottom: 24px; }
+        .service-card h3 { font-size: 1.5rem; color: #37264e; margin-bottom: 12px; }
+        .service-card p { color: #5e6372; margin-bottom: 18px; }
+        .service-card ul { padding-left: 20px; color: #4b4658; }
+        .service-card li { margin: 8px 0; }
+        .support-heading { margin: 64px 0 24px; max-width: 780px; }
+        .support-heading h3 { font-size: 1.6rem; margin-bottom: 10px; }
+        .support-heading p { color: #5e6372; }
+        .skills-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+        .skill-card { box-shadow: none; border: 1px solid #e7e2f0; }
+        .projects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .projects-section .section-heading p { color: rgba(255,255,255,.9); }
+        .projects-subtitle { margin-top: 48px; font-size: 1.5rem; }
+        .projects-note { color: rgba(255,255,255,.85); margin-top: 8px; }
+        .projects-subtitle + .projects-grid { margin-top: 24px; }
+        .work-note { padding: 28px; margin-top: 32px; border-left: 4px solid #d6c3f4; background: rgba(255,255,255,.08); }
+        .contact-method a { color: #594080; overflow-wrap: anywhere; }
+        .contact-methods { gap: 16px; }
+        .contact-intro { color: #5e6372; margin-bottom: 24px; }
+        .contact-direct { display: grid; gap: 12px; }
+        .contact-direct a { display: block; padding: 16px 20px; border-radius: 10px; background: #f2eff8; color: #52377e; text-decoration: none; font-weight: 600; }
+        .contact-direct a:hover { background: #e7dff2; }
+        .contact-social { display: flex; flex-wrap: wrap; gap: 12px 20px; margin-top: 24px; }
+        .contact-social a { color: #594080; }
+        .fade-in { opacity: 1; transform: none; }
+        @media (max-width: 900px) {
+            .hero-content { grid-template-columns: 1fr; gap: 36px; }
+            .service-grid, .skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .service-card:last-child { grid-column: 1 / -1; }
+            .contact-grid { gap: 30px; }
+        }
+        @media (max-width: 600px) {
+            .container { padding: 0 24px; }
+            .site-nav { align-items: flex-start; flex-direction: column; padding-top: 18px; padding-bottom: 18px; gap: 12px; }
+            .nav-links { gap: 10px 18px; }
+            .nav-links a { font-size: .85rem; }
+            .hero { padding: 56px 0; }
+            .hero-content { text-align: left; }
+            .hero-card { padding: 24px; }
+            .contact-info { gap: 12px 20px; }
+            .cta-buttons { align-items: stretch; }
+            .btn { text-align: center; padding: 13px 20px; }
+            .service-grid, .skills-grid, .projects-grid { grid-template-columns: 1fr; }
+            .skills-section, .projects-section, .experience-section, .contact-section { padding: 60px 0; }
+            .section-title { font-size: 2rem; }
+            .timeline-content { width: calc(100% - 48px); margin-left: 48px; padding: 24px; }
+            .timeline-item:nth-child(even) .timeline-content { margin-left: 48px; }
+            .timeline::before { left: 10px; }
+            .timeline-content::before { left: -48px !important; }
+            .contact-form { padding: 24px; }
+            .contact-method { padding: 18px 12px; }
+            .contact-email-item { gap: 8px; }
+            .contact-email-item p { font-size: .9rem; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after { animation: none !important; transition: none !important; }
+        }
     </style>
 </head>
 <body>
+    <a class="skip-link" href="#main">Bỏ qua điều hướng</a>
+    <header class="site-header">
+        <nav class="container site-nav" aria-label="Điều hướng chính">
+            <a class="brand" href="#main">Vũ Chung<span aria-hidden="true">.</span></a>
+            <div class="nav-links">
+                <a href="#services">Dịch vụ</a>
+                <a href="#skills">Chuyên môn</a>
+                <a href="#projects">Dự án</a>
+                <a href="#experience">Kinh nghiệm</a>
+                <a href="#contact">Liên hệ</a>
+            </div>
+        </nav>
+    </header>
+    <main id="main">
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
+                    <p class="eyebrow">Developer · Product support · Đà Nẵng</p>
                     <h1>Vũ Chung</h1>
-                    <div class="subtitle">Indie Game Developer - Google Play</div>
+                    <div class="subtitle">Website, ứng dụng mobile Android<br>và game Unity.</div>
                     <div class="description">
-                        Tôi tập trung phát triển game casual và puzzle trên Google Play, từ ý tưởng, phát triển, tối ưu hóa doanh thu đến vận hành phát hành. Với kinh nghiệm freelance nhiều năm, tôi đồng hành cùng cá nhân và studio nhỏ để biến ý tưởng game thành sản phẩm thực tế, có người chơi và tăng trưởng ổn định.
+                        Tôi là Vũ Chung, lập trình viên phát triển và hỗ trợ sản phẩm số. Tích hợp hệ thống và phát hành game, ứng dụng mobile tôi mở rộng đồng hành cùng các dự án website và ứng dụng mobile Android — từ xây dựng tính năng, kết nối dữ liệu đến hoàn thiện, phát hành và vận hành sản phẩm.
                     </div>
                     
                     <div class="contact-info">
@@ -584,14 +696,14 @@
                             <i class="fas fa-calendar"></i>
                             <span>16/06/1996</span>
                         </div>
-                        <div class="contact-item">
+                        <a class="contact-item" href="tel:0962779762">
                             <i class="fas fa-phone"></i>
                             <span>0962779762</span>
-                        </div>
-                        <div class="contact-item">
+                        </a>
+                        <a class="contact-item" href="mailto:adm@vuchungbt.com">
                             <i class="fas fa-envelope"></i>
                             <span>adm@vuchungbt.com</span>
-                        </div>
+                        </a>
                         <div class="contact-item">
                             <i class="fas fa-map-marker-alt"></i>
                             <span>Sơn Trà, Đà Nẵng</span>
@@ -599,36 +711,73 @@
                     </div>
 
                     <div class="cta-buttons">
-                        <a href="#projects" class="btn btn-primary">Xem Dự Án</a>
-                        <a href="#contact" class="btn btn-secondary">Liên Hệ</a>
+                        <a href="#contact" class="btn btn-primary">Trao đổi về sản phẩm</a>
+                        <a href="#services" class="btn btn-secondary">Khám phá dịch vụ</a>
                     </div>
                 </div>
                 
                 <div class="hero-card">
-                    <h3 style="color: white; margin-bottom: 20px; font-size: 1.5rem;">Chuyên Môn Chính</h3>
-                    <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-                        <span style="background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px; font-size: 0.9rem;">Unity Game Development</span>
-                        <span style="background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px; font-size: 0.9rem;">Google Play Publishing</span>
-                        <span style="background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px; font-size: 0.9rem;">ASO & Tối ưu chuyển đổi</span>
-                        <span style="background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px; font-size: 0.9rem;">AdMob Integration</span>
-                        <span style="background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px; font-size: 0.9rem;">In-App Purchase</span>
-                        <span style="background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px; font-size: 0.9rem;">Closed Testing 12 Tester</span>
-                    </div>
+                    <h2>Từ ý tưởng đến sản phẩm</h2>
+                    <p>Hỗ trợ tài khoản Store phát hành</p>
+                    <ul class="focus-list">
+                        <li><strong>Website &amp; hệ thống web</strong><span>Giao diện, tính năng, backend và API.</span></li>
+                        <li><strong>Ứng dụng mobile Android</strong><span>Phát triển, tích hợp dịch vụ và hỗ trợ phát hành.</span></li>
+                        <li><strong>Game Unity &amp; Google Play</strong><span>Game casual, puzzle, AdMob và In-App Purchase.</span></li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section class="skills-section">
+    <section class="skills-section services-section" id="services">
         <div class="container">
-            <h2 class="section-title fade-in">Dịch Vụ Đang Triển Khai</h2>
+            <div class="section-heading">
+                <h2 class="section-title">Tôi có thể hỗ trợ bạn</h2>
+                <p>Dù bạn đang bắt đầu một ý tưởng hay cần nâng cấp sản phẩm hiện có, tôi cùng bạn xác định nhu cầu và triển khai phần việc phù hợp.</p>
+            </div>
+            <div class="service-grid">
+                <article class="service-card">
+                    <span class="service-number">01 / ỨNG DỤNG MOBILE ANDROID</span>
+                    <h3>Ứng dụng mobile Android</h3>
+                    <p>Phát triển và hỗ trợ ứng dụng di động, từ chức năng sản phẩm đến kết nối hệ thống phía sau.</p>
+                    <ul>
+                        <li>Xây dựng, điều chỉnh tính năng và trải nghiệm sử dụng.</li>
+                        <li>Kết nối API, dữ liệu và các dịch vụ tích hợp.</li>
+                        <li>Hỗ trợ kiểm thử, hoàn thiện và phát hành trên Google Play.</li>
+                    </ul>
+                </article>
+                <article class="service-card">
+                    <span class="service-number">02 / GAME UNITY</span>
+                    <h3>Game Unity</h3>
+                    <p>Tiếp tục phát triển game casual, puzzle và đồng hành cùng cá nhân, studio nhỏ trong quá trình phát hành.</p>
+                    <ul>
+                        <li>Cung cấp source code, gia công và tùy biến game.</li>
+                        <li>Tích hợp AdMob, quảng cáo và In-App Purchase.</li>
+                        <li>Hỗ trợ phát hành, ASO và tối ưu chuyển đổi.</li>
+                    </ul>
+                </article>
+                <article class="service-card">
+                    <span class="service-number">03 / WEBSITE</span>
+                    <h3>Website &amp; ứng dụng web</h3>
+                    <p>Xây dựng website giới thiệu, trang sản phẩm và ứng dụng web theo nhu cầu thực tế.</p>
+                    <ul>
+                        <li>Thiết kế giao diện phù hợp máy tính và điện thoại.</li>
+                        <li>Phát triển tính năng, backend, API và cơ sở dữ liệu.</li>
+                        <li>Tích hợp dịch vụ, sửa lỗi và nâng cấp website hiện có.</li>
+                    </ul>
+                </article>
+            </div>
+            <div class="support-heading">
+                <h3>Hỗ trợ kỹ thuật &amp; phát hành</h3>
+                <p>Các dịch vụ Google Play vẫn được duy trì cho game và ứng dụng, bên cạnh hỗ trợ backend, tích hợp hệ thống và ứng dụng Windows.</p>
+            </div>
             <div class="skills-grid">
                 <div class="skill-card fade-in">
                     <h3><i class="fas fa-store" style="color: #667eea; margin-right: 10px;"></i>Hỗ trợ Phát hành Google Console</h3>
                     <ul>
                         <li>Tài khoản cá nhân/doanh nghiệp</li>
-                        <li>Phù hợp cho người  chưa có, hoặc đã bị xóa/chấm dứt tài khoản</li>
+                        <li>Tư vấn thiết lập tài khoản và trao đổi hướng xử lý khi gặp vấn đề tài khoản</li>
                     </ul>
                 </div>
                 <div class="skill-card fade-in">
@@ -642,13 +791,13 @@
                     <h3><i class="fas fa-exchange-alt" style="color: #667eea; margin-right: 10px;"></i>Nhận Transfer Cho Tài Khoản</h3>
                     <ul>
                         <li>Hỗ trợ quy trình chuyển giao ứng dụng/game an toàn</li>
-                        <li>Đảm bảo đúng luồng ownership trong Google Play Console</li>
+                        <li>Hỗ trợ bàn giao quyền sở hữu trong Google Play Console</li>
                     </ul>
                 </div>
                 <div class="skill-card fade-in">
                     <h3><i class="fas fa-vial" style="color: #667eea; margin-right: 10px;"></i>Dịch Vụ 12 Tester Trong 14 Ngày</h3>
                     <ul>
-                        <li>Thiết lập nhóm tester theo yêu cầu closed testing</li>
+                        <li>Tổ chức nhóm 12 tester cho đợt closed testing 14 ngày</li>
                         <li>Theo dõi và hỗ trợ xuyên suốt trong 14 ngày</li>
                     </ul>
                 </div>
@@ -656,7 +805,7 @@
                     <h3><i class="fas fa-upload" style="color: #667eea; margin-right: 10px;"></i>Upload Từ Source-code Đến Production</h3>
                     <ul>
                         <li>Hỗ trợ build Android App Bundle và cấu hình phát hành</li>
-                        <li>Đi từ source-code đến bản production trên Play Store</li>
+                        <li>Chuẩn bị và gửi bản production để Google Play xét duyệt</li>
                     </ul>
                 </div>
                 <div class="skill-card fade-in">
@@ -667,10 +816,10 @@
                     </ul>
                 </div>
                 <div class="skill-card fade-in">
-                    <h3><i class="fas fa-sliders-h" style="color: #667eea; margin-right: 10px;"></i>Sign Verification PackageID APK</h3>
+                    <h3><i class="fas fa-sliders-h" style="color: #667eea; margin-right: 10px;"></i>Chữ Ký &amp; Package ID Android</h3>
                     <ul>
-                        <li>Đăng ký packageID APK cho ứng không có trên Store</li>
-                        <li>Phù hợp ứng dụng không cần xác minh thông tin cho yêu cầu mới</li>
+                        <li>Hỗ trợ chữ ký, package ID và bản build APK</li>
+                        <li>Trao đổi phương án đăng ký, xác minh cho ứng dụng phân phối ngoài Store</li>
                     </ul>
                 </div>
                 <div class="skill-card fade-in">
@@ -681,10 +830,10 @@
                     </ul>
                 </div>
                 <div class="skill-card fade-in">
-                    <h3><i class="fas fa-bullhorn" style="color: #667eea; margin-right: 10px;"></i>Dịch vụ xây dựng Web/App</h3>
+                    <h3><i class="fas fa-desktop" style="color: #667eea; margin-right: 10px;"></i>Ứng Dụng Windows &amp; Tích Hợp</h3>
                     <ul>
-                        <li>Thiết kế website/app theo yêu cầu</li>
-                        <li>Xây dựng ứng dụng windows</li>
+                        <li>Xây dựng ứng dụng Windows theo yêu cầu</li>
+                        <li>Kết nối backend, API và dữ liệu giữa các hệ thống</li>
                     </ul>
                 </div>
             </div>
@@ -692,12 +841,15 @@
     </section>
 
     <!-- Skills Section -->
-    <section class="skills-section">
+    <section class="skills-section" id="skills">
         <div class="container">
-            <h2 class="section-title fade-in">Kỹ Năng Chuyên Môn</h2>
+            <div class="section-heading">
+                <h2 class="section-title">Nền tảng chuyên môn</h2>
+                <p>Kinh nghiệm từ backend, dữ liệu và tích hợp doanh nghiệp đến ứng dụng mobile Android, hệ thống thời gian thực và game Unity.</p>
+            </div>
             <div class="skills-grid">
                 <div class="skill-card fade-in">
-                    <h3><i class="fas fa-mobile-alt" style="color: #667eea; margin-right: 10px;"></i>Mobile & Design</h3>
+                    <h3><i class="fas fa-mobile-alt" style="color: #667eea; margin-right: 10px;"></i>Web, Mobile &amp; Design</h3>
                     <ul>
                         <li>Android Backend API</li>
                         <li>Google Play Store Publishing</li>
@@ -764,10 +916,38 @@
     <!-- Projects Section -->
     <section class="projects-section" id="projects">
         <div class="container">
-            <h2 class="section-title" style="color: white;">Game Nổi Bật Trên Google Play</h2>
+            <div class="section-heading">
+                <h2 class="section-title" style="color: white;">Dự án &amp; sản phẩm đã thực hiện</h2>
+                <p>Từ ứng dụng phục vụ nhu cầu hằng ngày và hệ thống backend đến các game casual, puzzle trên Google Play.</p>
+            </div>
+            <h3 class="projects-subtitle">Ứng dụng &amp; hệ thống</h3>
+            <div class="projects-grid">
+                <article class="project-card">
+                    <h4 class="project-title">Hệ thống mạng xã hội Archie</h4>
+                    <div><span class="project-tech">Spring Boot</span><span class="project-tech">Microservices</span><span class="project-tech">2024–2025</span></div>
+                    <p class="project-description">Dự án cá nhân lấy cảm hứng từ Haivl. Xây dựng backend với Eureka, Kafka, Redis, API Gateway và Keycloak; theo dõi hệ thống bằng ELK Stack, Prometheus và Grafana.</p>
+                </article>
+                <article class="project-card">
+                    <h4 class="project-title">Ứng dụng chat &amp; dating</h4>
+                    <div><span class="project-tech">Node.js</span><span class="project-tech">Socket.io</span><span class="project-tech">2019–2021</span></div>
+                    <p class="project-description">Phát triển API và backend thời gian thực bằng Express, Socket.io và MongoDB. Triển khai server public, phát hành ứng dụng lên Google Play và thực hiện hoạt động marketing.</p>
+                </article>
+                <article class="project-card">
+                    <h4 class="project-title">Khóa học, tài chính &amp; ghi chú</h4>
+                    <div><span class="project-tech">Java</span><span class="project-tech">Spring MVC / Boot</span><span class="project-tech">2018–2021</span></div>
+                    <p class="project-description">Các dự án cá nhân về hệ thống khóa học, quản lý tài chính và ghi chú, sử dụng Spring MVC, Spring Boot, Servlet/Jakarta EE. Nhóm ứng dụng đã ghi nhận hơn 136.000 lượt tải trên Google Play.</p>
+                </article>
+                <article class="project-card">
+                    <h4 class="project-title">Tích hợp dữ liệu doanh nghiệp</h4>
+                    <div><span class="project-tech">EDI / X12 / EDIFACT</span><span class="project-tech">Data Mapping</span></div>
+                    <p class="project-description">Kinh nghiệm tại DICENTRAL (TrueCommerce Vietnam): phân tích, mapping và chuyển đổi dữ liệu cho hệ thống chuỗi cung ứng; làm việc với XML, cơ sở dữ liệu SQL và công cụ IBM.</p>
+                </article>
+            </div>
+            <h3 class="projects-subtitle">Game đã phát hành trên Google Play</h3>
+            <p class="projects-note">Các mốc lượt tải đã ghi nhận trong hồ sơ dự án.</p>
             <div class="projects-grid">
                 <div class="project-card fade-in">
-                    <h3 class="project-title">IceBerg Dash</h3>
+                    <h4 class="project-title">IceBerg Dash</h4>
                     <div>
                         <span class="project-tech">Casual</span>
                         <span class="project-tech">Arcade</span>
@@ -776,11 +956,11 @@
                     <div class="project-description">
                         Game nhảy vượt chướng ngại trên các tảng băng với cơ chế giữ-thả để canh lực nhảy chuẩn xác. Lối chơi dễ tiếp cận, phù hợp người chơi thích trải nghiệm nhanh.
                     </div>
-                    <div style="margin-top: 15px;"><a href="https://play.google.com/store/apps/details?id=com.IcebergStudio.IcebergDash" target="_blank" style="color: #fff; text-decoration: underline;">Xem trên Google Play</a></div>
+                    <div style="margin-top: 15px;"><a href="https://play.google.com/store/apps/details?id=com.IcebergStudio.IcebergDash" target="_blank" rel="noopener noreferrer" style="color: #fff; text-decoration: underline;">Xem trên Google Play</a></div>
                 </div>
                 
                 <div class="project-card fade-in">
-                    <h3 class="project-title">Sunray Valley</h3>
+                    <h4 class="project-title">Sunray Valley</h4>
                     <div>
                         <span class="project-tech">Casual</span>
                         <span class="project-tech">Farming</span>
@@ -789,24 +969,24 @@
                     <div class="project-description">
                         Game nông trại thư giãn với vòng lặp trồng trọt - thu hoạch - mở rộng khu vực. Tập trung vào tiến trình đều đặn, dễ giữ chân người chơi casual.
                     </div>
-                    <div style="margin-top: 15px;"><a href="https://play.google.com/store/apps/details?id=com.SunrayValley.SunrayValley" target="_blank" style="color: #fff; text-decoration: underline;">Xem trên Google Play</a></div>
+                    <div style="margin-top: 15px;"><a href="https://play.google.com/store/apps/details?id=com.SunrayValley.SunrayValley" target="_blank" rel="noopener noreferrer" style="color: #fff; text-decoration: underline;">Xem trên Google Play</a></div>
                 </div>
                 
                 <div class="project-card fade-in">
-                    <h3 class="project-title">Gem Row Breaker</h3>
+                    <h4 class="project-title">Gem Row Breaker</h4>
                     <div>
                         <span class="project-tech">Puzzle</span>
                         <span class="project-tech">Block Game</span>
                         <span class="project-tech">1K+ Downloads</span>
                     </div>
                     <div class="project-description">
-                        Game xếp khối màu sắc theo hàng để phá gem và tạo chuỗi combo. Trải nghiệm puzzle gây nghiện, tập trung vào điểm số và replayability.
+                        Game xếp khối màu sắc theo hàng để phá gem và tạo chuỗi combo. Trải nghiệm puzzle tập trung vào điểm số và khả năng chơi lại.
                     </div>
-                    <div style="margin-top: 15px;"><a href="https://play.google.com/store/apps/details?id=com.GemRowBreakerStudio.GemRowBreaker" target="_blank" style="color: #fff; text-decoration: underline;">Xem trên Google Play</a></div>
+                    <div style="margin-top: 15px;"><a href="https://play.google.com/store/apps/details?id=com.GemRowBreakerStudio.GemRowBreaker" target="_blank" rel="noopener noreferrer" style="color: #fff; text-decoration: underline;">Xem trên Google Play</a></div>
                 </div>
                 
                 <div class="project-card fade-in">
-                    <h3 class="project-title">Shiny Blocks</h3>
+                    <h4 class="project-title">Shiny Blocks</h4>
                     <div>
                         <span class="project-tech">Puzzle</span>
                         <span class="project-tech">Relaxing Gameplay</span>
@@ -815,20 +995,28 @@
                     <div class="project-description">
                         Game block puzzle nhẹ nhàng với phong cách hình ảnh sáng, cảm giác chơi thư giãn, phù hợp mọi lứa tuổi và có khả năng chơi lặp cao.
                     </div>
-                    <div style="margin-top: 15px;"><a href="https://play.google.com/store/apps/details?id=com.ShinyBlocksStudio.ShinyBlocks" target="_blank" style="color: #fff; text-decoration: underline;">Xem trên Google Play</a></div>
+                    <div style="margin-top: 15px;"><a href="https://play.google.com/store/apps/details?id=com.ShinyBlocksStudio.ShinyBlocks" target="_blank" rel="noopener noreferrer" style="color: #fff; text-decoration: underline;">Xem trên Google Play</a></div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Experience Section -->
-    <section class="experience-section">
+    <section class="experience-section" id="experience">
         <div class="container">
             <h2 class="section-title fade-in">Kinh Nghiệm Làm Việc</h2>
             <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Hiện tại</div>
+                        <h3 class="timeline-title">Phát triển &amp; hỗ trợ sản phẩm số</h3>
+                        <div class="timeline-company">Website · Mobile App · Unity Game</div>
+                        <div class="timeline-description">Mở rộng hỗ trợ website và ứng dụng mobile Android, đồng thời tiếp tục phát triển game Unity. Kết hợp kinh nghiệm backend, API, dữ liệu và phát hành để xây dựng mới, tích hợp tính năng, sửa lỗi và hoàn thiện sản phẩm.</div>
+                    </div>
+                </div>
                 <div class="timeline-item fade-in">
                     <div class="timeline-content">
-                        <div class="timeline-date">2025 - 2026(Now)</div>
+                        <div class="timeline-date">2025 – nay</div>
                         <h3 class="timeline-title">Indie Game Publisher</h3>
                         <div class="timeline-company">Nhà phát hành game độc lập(Google Play)</div>
                         <div class="timeline-description">
@@ -886,7 +1074,7 @@
                         <h3 class="timeline-title">Integration Mapping Engineer</h3>
                         <div class="timeline-company">DICENTRAL (TrueCommerce Vietnam)</div>
                         <div class="timeline-description">
-                            Chuyên gia tích hợp EDI với kiến thức sâu về các tiêu chuẩn EDI, X12, EDIFACT và nhiều loại dữ liệu khác. Có kinh nghiệm extensive trong việc mapping và transform dữ liệu để đảm bảo tích hợp seamless across các platform khác nhau.
+                            Tích hợp dữ liệu theo các tiêu chuẩn EDI, X12 và EDIFACT. Phân tích, mapping và chuyển đổi dữ liệu để kết nối các nền tảng trong hệ thống doanh nghiệp.
                         </div>
                     </div>
                 </div>
@@ -897,7 +1085,7 @@
                         <h3 class="timeline-title">Java Developer</h3>
                         <div class="timeline-company">Personal Projects</div>
                         <div class="timeline-description">
-                            Phát triển nhiều dự án cá nhân bao gồm hệ thống khóa học, ứng dụng quản lý tài chính và ghi chú với hơn 136,000+ lượt tải trên Google Play Store. Sử dụng Spring MVC, Spring Boot, Servlet/Jakarta EE.
+                            Phát triển các dự án cá nhân gồm hệ thống khóa học, ứng dụng quản lý tài chính và ghi chú; đã ghi nhận hơn 136.000 lượt tải trên Google Play. Sử dụng Spring MVC, Spring Boot và Servlet/Jakarta EE.
                         </div>
                     </div>
                 </div>
@@ -908,29 +1096,24 @@
     <!-- Contact Section -->
     <section class="contact-section" id="contact">
         <div class="container">
-            <h2 class="section-title fade-in">Liên Hệ Với Tôi</h2>
+            <div class="section-heading">
+                <h2 class="section-title">Cùng trao đổi về sản phẩm của bạn</h2>
+                <p>Website mới, ứng dụng cần hoàn thiện hay một game sắp phát hành — hãy chia sẻ nhu cầu để cùng xác định hướng triển khai.</p>
+            </div>
             <div class="contact-grid">
                 <div class="contact-form fade-in">
-                    <h3 style="margin-bottom: 30px; color: #333; font-size: 1.5rem;">Gửi Tin Nhắn</h3>
-                    <form>
-                        <div class="form-group">
-                            <label for="name">Họ và Tên</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Chủ Đề</label>
-                            <input type="text" id="subject" name="subject" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Tin Nhắn</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
-                        </div>
-                        <button disabled type="submit" class="btn btn-primary" style="width: 100%;">Gửi Tin Nhắn</button>
-                    </form>
+                    <h3 style="margin-bottom: 18px; color: #333; font-size: 1.5rem;">Bắt đầu từ nhu cầu của bạn</h3>
+                    <p class="contact-intro">Bạn có thể gửi mô tả ý tưởng, đường dẫn sản phẩm hoặc vấn đề cần xử lý, kèm thời gian dự kiến. Tôi sẽ cùng bạn trao đổi phạm vi công việc và phương án phù hợp.</p>
+                    <div class="contact-direct">
+                        <a href="https://zalo.me/0962779762" target="_blank" rel="noopener noreferrer">Trao đổi qua Zalo ↗</a>
+                        <a href="mailto:adm@vuchungbt.com?subject=Trao%20%C4%91%E1%BB%95i%20v%E1%BB%81%20s%E1%BA%A3n%20ph%E1%BA%A9m">Gửi email về dự án ↗</a>
+                        <a href="tel:0962779762">Gọi 0962 779 762</a>
+                    </div>
+                    <div class="contact-social" aria-label="Kênh liên hệ khác">
+                        <a href="https://www.facebook.com/messages/t/vuchungbt" target="_blank" rel="noopener noreferrer">Messenger</a>
+                        <a href="https://t.me/blw1606" target="_blank" rel="noopener noreferrer">Telegram</a>
+                        <a href="https://www.facebook.com/vuchungbt" target="_blank" rel="noopener noreferrer">Facebook</a>
+                    </div>
                 </div>
                 
                 <div class="contact-info-section fade-in">
@@ -940,7 +1123,7 @@
                             <i class="fas fa-phone"></i>
                             <div>
                                 <strong>Điện Thoại</strong>
-                                <p>0962779762</p>
+                                <p><a href="tel:0962779762">0962779762</a></p>
                             </div>
                         </div> 
                         <div class="contact-method contact-method-email">
@@ -949,13 +1132,13 @@
                                 
                                 <div>
                                     <strong>Email</strong>
-                                    <p>adm@vuchungbt.com</p>
+                                    <p><a href="mailto:adm@vuchungbt.com">adm@vuchungbt.com</a></p>
                                 </div>
                             </div>
                             <div class="contact-email-item">
                                 <i class="fas fa-envelope"></i>
                                 <div> 
-                                    <p>vuchungbt196@gmail.com</p>
+                                    <p><a href="mailto:vuchungbt196@gmail.com">vuchungbt196@gmail.com</a></p>
                                 </div>
                             </div>
                         </div>
@@ -972,7 +1155,7 @@
                             <i class="fas fa-globe"></i>
                             <div>
                                 <strong>Website</strong>
-                                <p>www.vuchungbt.com</p>
+                                <p><a href="https://vuchungbt.com">www.vuchungbt.com</a></p>
                             </div>
                         </div>
                     </div> 
@@ -982,6 +1165,8 @@
     </section>
 
     <!-- Footer -->
+    </main>
+
     <footer style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 50px 0; text-align: center;">
 
         <div class="echbay-sms-messenger style-for-position-br">
@@ -990,21 +1175,21 @@
                 <button type="button" class="echbay-phonering-bank-event" aria-label="Mã QR ngân hàng">.</button>
             </div>
             <div class="phonering-alo-alo">
-                <a href="tel:0962779762" rel="nofollow" class="echbay-phonering-alo-event">.</a>
+                <a href="tel:0962779762" rel="nofollow" class="echbay-phonering-alo-event" aria-label="Gọi điện">.</a>
             </div>
             <div class="phonering-alo-zalo">
-                <a href="https://zalo.me/0962779762" target="_blank" rel="nofollow" class="echbay-phonering-zalo-event">.</a>
+                <a href="https://zalo.me/0962779762" target="_blank" rel="nofollow noopener noreferrer" class="echbay-phonering-zalo-event" aria-label="Liên hệ Zalo">.</a>
             </div>
             
             <div class="phonering-alo-messenger">
-                <a href="https://www.facebook.com/messages/t/vuchungbt" target="_blank" rel="nofollow" class="echbay-phonering-messenger-event">.</a>
+                <a href="https://www.facebook.com/messages/t/vuchungbt" target="_blank" rel="nofollow noopener noreferrer" class="echbay-phonering-messenger-event" aria-label="Liên hệ Messenger">.</a>
             </div>
             
             <div class="phonering-alo-telegram">
-                <a href="https://t.me/blw1606" target="_blank" rel="nofollow" class="echbay-phonering-telegram-event">.</a>
+                <a href="https://t.me/blw1606" target="_blank" rel="nofollow noopener noreferrer" class="echbay-phonering-telegram-event" aria-label="Liên hệ Telegram">.</a>
             </div>
             <div class="phonering-alo-facebook">
-                <a href="https://www.facebook.com/vuchungbt" target="_blank" rel="nofollow" class="echbay-phonering-facebook-event">.</a>
+                <a href="https://www.facebook.com/vuchungbt" target="_blank" rel="nofollow noopener noreferrer" class="echbay-phonering-facebook-event" aria-label="Trang Facebook">.</a>
             </div>
         </div>
         <style type="text/css">
@@ -1117,10 +1302,12 @@
 					flex-direction: column;
 					align-items: center;
 					gap: 16px;
+					overflow-y: auto;
+					padding-top: 40px;
 				}
 				.bank-qr-modal__close {
 					position: absolute;
-					top: -8px;
+					top: 0;
 					right: 0;
 					z-index: 2;
 					width: 44px;
@@ -1200,7 +1387,7 @@
 				}
 				.bank-qr-modal__img-wrap img {
 					max-width: 100%;
-					max-height: calc(100vh - 140px);
+					max-height: calc(100dvh - 240px);
 					width: auto;
 					height: auto;
 					object-fit: contain;
@@ -1218,6 +1405,14 @@
 					white-space: nowrap;
 					border: 0;
 				}
+                @media (max-width: 600px) {
+                    .echbay-sms-messenger { display: flex; gap: 10px; width: auto; right: 16px; bottom: 12px; }
+                    .echbay-sms-messenger div { width: 44px; height: 44px; margin: 0; }
+                    .echbay-sms-messenger div.phonering-alo-messenger,
+                    .echbay-sms-messenger div.phonering-alo-telegram,
+                    .echbay-sms-messenger div.phonering-alo-facebook { display: none; }
+                    footer { padding-bottom: 90px !important; }
+                }
 				</style>
 
 
@@ -1226,10 +1421,10 @@
             
             <div style="border-top: 1px solid rgba(255,255,255,0.2); padding-top: 30px;">
                 <p style="font-size: 1.1rem; margin-bottom: 10px; opacity: 0.9;">
-                    <strong>Vũ Chung</strong> - Indie Game Developer Google Play
+                    <strong>Vũ Chung</strong> — Website · Mobile App · Unity Game
                 </p>
                 <p style="opacity: 0.7;">
-                    © 2025 Vũ Chung. Tất cả quyền được bảo lưu.
+                    © 2026 Vũ Chung. Tất cả quyền được bảo lưu.
                 </p>
                 <p style="opacity: 0.7; margin-top: 10px;">
                     Được thiết kế bởi Chat-GPT và Claude.AI 
@@ -1243,13 +1438,13 @@
         <div class="bank-qr-modal__inner">
             <h2 id="bank-qr-modal-title" class="visually-hidden">Mã QR chuyển khoản</h2>
             <button type="button" class="bank-qr-modal__close" data-bank-qr-close aria-label="Đóng">&times;</button>
-            <div class="bank-qr-modal__tabs" role="tablist" aria-label="Chọn ngân hàng">
-                <button type="button" role="tab" class="bank-qr-modal__tab is-active" data-bank="techcombank" aria-selected="true">Techcombank</button>
-                <button type="button" role="tab" class="bank-qr-modal__tab" data-bank="vietcombank" aria-selected="false">Vietcombank</button>
+            <div class="bank-qr-modal__tabs" role="group" aria-label="Chọn ngân hàng">
+                <button type="button" class="bank-qr-modal__tab is-active" data-bank="techcombank" aria-pressed="true">Techcombank</button>
+                <button type="button" class="bank-qr-modal__tab" data-bank="vietcombank" aria-pressed="false">Vietcombank</button>
             </div>
             <div class="bank-qr-modal__account">
                 <span id="bank-qr-modal-account" class="bank-qr-modal__account-number">STK: 19036027886014</span>
-                <button type="button" id="bank-qr-modal-copy" class="bank-qr-modal__copy">Copy STK</button>
+                <button type="button" id="bank-qr-modal-copy" class="bank-qr-modal__copy" aria-live="polite">Sao chép STK</button>
             </div>
             <div class="bank-qr-modal__img-wrap">
                 <img id="bank-qr-modal-img" src="img/pay_techcombank.jpg" alt="Mã QR chuyển khoản Techcombank" />
@@ -1258,134 +1453,6 @@
     </div>
 
     <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Fade in animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all fade-in elements
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Contact form submission
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            const name = formData.get('name');
-            const email = formData.get('email');
-            const subject = formData.get('subject');
-            const message = formData.get('message');
-            
-            // Simple validation
-            if (!name || !email || !subject || !message) {
-                alert('Vui lòng điền đầy đủ thông tin!');
-                return;
-            }
-            
-            // Simulate sending email (in real app, you'd send to server)
-            alert(`Cảm ơn ${name}! Tin nhắn của bạn đã được gửi thành công. Tôi sẽ phản hồi sớm nhất có thể.`);
-            
-            // Reset form
-            this.reset();
-        });
-
-        // Add hover effects to social links
-        document.querySelectorAll('footer a').forEach(link => {
-            link.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-3px) scale(1.1)';
-                this.style.textShadow = '0 5px 15px rgba(255,255,255,0.3)';
-            });
-            
-            link.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1)';
-                this.style.textShadow = 'none';
-            });
-        });
-
-        // Add particle effect to hero section
-        function createParticles() {
-            const hero = document.querySelector('.hero');
-            const particlesContainer = document.createElement('div');
-            particlesContainer.style.position = 'absolute';
-            particlesContainer.style.top = '0';
-            particlesContainer.style.left = '0';
-            particlesContainer.style.width = '100%';
-            particlesContainer.style.height = '100%';
-            particlesContainer.style.pointerEvents = 'none';
-            particlesContainer.style.zIndex = '1';
-            
-            hero.appendChild(particlesContainer);
-            
-            for (let i = 0; i < 50; i++) {
-                const particle = document.createElement('div');
-                particle.style.position = 'absolute';
-                particle.style.width = '2px';
-                particle.style.height = '2px';
-                particle.style.background = 'rgba(255,255,255,0.5)';
-                particle.style.borderRadius = '50%';
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.top = Math.random() * 100 + '%';
-                particle.style.animation = `twinkle ${Math.random() * 3 + 2}s infinite alternate`;
-                
-                particlesContainer.appendChild(particle);
-            }
-        }
-
-        // Add twinkle animation
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes twinkle {
-                0% { opacity: 0.3; transform: scale(1); }
-                100% { opacity: 1; transform: scale(1.2); }
-            }
-        `;
-        document.head.appendChild(style);
-        
-        // Create particles when page loads
-        window.addEventListener('load', createParticles);
-        
-        // Add typing effect to hero title
-        const heroTitle = document.querySelector('.hero-text h1');
-        const originalText = heroTitle.textContent;
-        heroTitle.textContent = '';
-        
-        let i = 0;
-        const typeWriter = () => {
-            if (i < originalText.length) {
-                heroTitle.textContent += originalText.charAt(i);
-                i++;
-                setTimeout(typeWriter, 100);
-            }
-        };
-        
-        setTimeout(typeWriter, 1000);
-
         // Bank QR full-screen modal
         (function () {
             const modal = document.getElementById('bank-qr-modal');
@@ -1397,6 +1464,9 @@
             const closeEls = modal.querySelectorAll('[data-bank-qr-close]');
             let currentBankKey = 'techcombank';
             let copyStatusTimeout;
+            let previousFocus;
+            let previousOverflow;
+            const background = document.querySelectorAll('body > header, body > main, body > footer, body > .skip-link');
 
             const bankQr = {
                 techcombank: {
@@ -1421,42 +1491,55 @@
                 tabs.forEach((tab) => {
                     const active = tab.getAttribute('data-bank') === key;
                     tab.classList.toggle('is-active', active);
-                    tab.setAttribute('aria-selected', active ? 'true' : 'false');
+                    tab.setAttribute('aria-pressed', active ? 'true' : 'false');
                 });
-                copyBtn.textContent = 'Copy STK';
+                clearTimeout(copyStatusTimeout);
+                copyBtn.textContent = 'Sao chép STK';
             }
 
             function openModal() {
+                previousFocus = document.activeElement;
+                previousOverflow = document.body.style.overflow;
                 modal.removeAttribute('hidden');
                 document.body.style.overflow = 'hidden';
+                background.forEach(el => { el.inert = true; });
                 setBank('techcombank');
+                modal.querySelector('button[data-bank-qr-close]').focus();
             }
 
             function closeModal() {
                 modal.setAttribute('hidden', '');
-                document.body.style.overflow = '';
+                document.body.style.overflow = previousOverflow;
+                background.forEach(el => { el.inert = false; });
+                previousFocus?.focus();
             }
 
             async function copyAccountNumber() {
                 const account = bankQr[currentBankKey].account;
+                let copied = false;
                 try {
                     await navigator.clipboard.writeText(account);
+                    copied = true;
                 } catch (err) {
                     const textArea = document.createElement('textarea');
                     textArea.value = account;
                     textArea.setAttribute('readonly', '');
                     textArea.style.position = 'fixed';
                     textArea.style.opacity = '0';
-                    document.body.appendChild(textArea);
+                    modal.appendChild(textArea);
                     textArea.select();
-                    document.execCommand('copy');
-                    textArea.remove();
+                    try {
+                        copied = document.execCommand('copy');
+                    } finally {
+                        textArea.remove();
+                        copyBtn.focus();
+                    }
                 }
-                copyBtn.textContent = 'Da copy';
+                copyBtn.textContent = copied ? 'Đã sao chép' : 'Vui lòng sao chép STK thủ công';
                 clearTimeout(copyStatusTimeout);
                 copyStatusTimeout = setTimeout(() => {
-                    copyBtn.textContent = 'Copy STK';
-                }, 1200);
+                    copyBtn.textContent = 'Sao chép STK';
+                }, 2000);
             }
 
             if (openBtn) openBtn.addEventListener('click', openModal);
@@ -1466,7 +1549,20 @@
             });
             if (copyBtn) copyBtn.addEventListener('click', copyAccountNumber);
             document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && !modal.hasAttribute('hidden')) closeModal();
+                if (modal.hidden) return;
+                if (e.key === 'Escape') closeModal();
+                if (e.key === 'Tab') {
+                    const buttons = Array.from(modal.querySelectorAll('button'));
+                    const first = buttons[0];
+                    const last = buttons[buttons.length - 1];
+                    if (e.shiftKey && document.activeElement === first) {
+                        e.preventDefault();
+                        last.focus();
+                    } else if (!e.shiftKey && document.activeElement === last) {
+                        e.preventDefault();
+                        first.focus();
+                    }
+                }
             });
         })();
     </script>
